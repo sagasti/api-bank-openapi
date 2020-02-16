@@ -145,7 +145,7 @@ paths:
                         - domicilio
                       properties:
                         domicilio:
-                          $ref: '#/components/schemas/domicilio'
+                          $ref: '#/components/schemas/domicilio_telefonos'
                         '':
                           type: string
                     cuentaNueva:
@@ -237,7 +237,7 @@ paths:
         - API Key: []
   /ConsultaCuenta:
     post:
-      summary: ''
+      summary: Consulta de cuentas
       operationId: post-apiOma-api-ConsultaCuenta
       responses:
         '200':
@@ -347,17 +347,10 @@ paths:
       responses:
         '200':
           description: OK
-  /Autenticación:
-    post:
-      summary: ''
-      operationId: post-Autenticaci-n
-      responses:
-        '200':
-          description: OK
   /RefreshTokenSession:
     parameters: []
     post:
-      summary: ''
+      summary: Refresh token sessión
       operationId: postRefreshTokenSession
       responses:
         '200':
@@ -365,7 +358,7 @@ paths:
   /ValidarUsuario:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de Usuario Valido
       operationId: postValidarUsuario
       responses:
         '200':
@@ -373,14 +366,14 @@ paths:
   /ValidarPassword:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de Password Valida
       operationId: postValidarPassword
       responses:
         '200':
           description: OK
   /GetUsuario:
     post:
-      summary: ''
+      summary: Consulta de Usuario (Tipo y Nro de documento y password)
       operationId: post-GetUsuario
       responses:
         '200':
@@ -388,7 +381,7 @@ paths:
   /LogOut:
     parameters: []
     post:
-      summary: ''
+      summary: LogOut
       operationId: postLogOut
       responses:
         '200':
@@ -396,7 +389,7 @@ paths:
   /RecuperarUsuario:
     parameters: []
     post:
-      summary: ''
+      summary: Recuperar Usuario
       operationId: postRecuperarUsuario
       responses:
         '200':
@@ -404,7 +397,7 @@ paths:
   /ConsultaAgenda:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de Agenda
       operationId: postConsultaAgenda
       responses:
         '200':
@@ -412,7 +405,7 @@ paths:
   /AltaBeneficiario:
     parameters: []
     post:
-      summary: ''
+      summary: Alta de Beneficiario
       operationId: postAltaBeneficiario
       responses:
         '200':
@@ -420,7 +413,7 @@ paths:
   /ModificarBeneficiario:
     parameters: []
     post:
-      summary: ''
+      summary: Modificación de Beneficiario
       operationId: postModificarBeneficiario
       responses:
         '200':
@@ -428,7 +421,7 @@ paths:
   /EliminarBeneficiario:
     parameters: []
     post:
-      summary: ''
+      summary: Baja de Beneficiario
       operationId: postEliminarBeneficiario
       responses:
         '200':
@@ -436,7 +429,7 @@ paths:
   /GenerarTransaccion:
     parameters: []
     post:
-      summary: ''
+      summary: Generar Transacción
       operationId: postGenerarTransaccion
       responses:
         '200':
@@ -444,7 +437,7 @@ paths:
   /ConsultaPrecio:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de Precio
       operationId: postConsultaPrecio
       responses:
         '200':
@@ -452,7 +445,7 @@ paths:
   /Conversor:
     parameters: []
     post:
-      summary: ''
+      summary: Conversor de Montos según Precios de Compra/Venta
       operationId: postConversor
       responses:
         '200':
@@ -460,7 +453,7 @@ paths:
   /GenerarCompraVenta:
     parameters: []
     post:
-      summary: ''
+      summary: Ingreso de Compra/Venta
       operationId: postGenerarCompraVenta
       responses:
         '200':
@@ -468,7 +461,7 @@ paths:
   /ConsultaTasa:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de tasas
       operationId: postConsultaTasa
       responses:
         '200':
@@ -476,7 +469,7 @@ paths:
   /CalculoInteres:
     parameters: []
     post:
-      summary: ''
+      summary: Cálculo de intereses y plazo
       operationId: postCalculoInteres
       responses:
         '200':
@@ -484,7 +477,7 @@ paths:
   /GenerarPlazoFijo:
     parameters: []
     post:
-      summary: ''
+      summary: Ingreso de Plazo Fijo
       operationId: postGenerarPlazoFijo
       responses:
         '200':
@@ -492,7 +485,7 @@ paths:
   /ModificarPlazoFijo:
     parameters: []
     post:
-      summary: ''
+      summary: Modificación de Plazo Fijo
       operationId: postModificarPlazoFijo
       responses:
         '200':
@@ -500,7 +493,7 @@ paths:
   /ConsultaPlazoFijo:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de Plazo Fijo
       operationId: postConsultaPlazoFijo
       responses:
         '200':
@@ -508,7 +501,7 @@ paths:
   /ConsultaPrestamos:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de Préstamos
       operationId: postConsultaPrestamos
       responses:
         '200':
@@ -516,14 +509,14 @@ paths:
   /ConsultaCuotas:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de cuotas de Prestamos
       operationId: postConsultaCuotas
       responses:
         '200':
           description: OK
   /GenerarPrestamo:
     post:
-      summary: ''
+      summary: Generación de Prestamos
       operationId: post-apiOma-api-GenerarPrestamo
       responses:
         '200':
@@ -975,9 +968,6 @@ components:
     persona_cuenta_nueva:
       title: persona_cuenta_nueva
       type: object
-      x-tags:
-        - Bank
-        - Sandboard
       description: ''
       properties:
         estadoCivil:
@@ -1079,6 +1069,192 @@ components:
       required:
         - codigoArea
         - nro
+    pais:
+      type: string
+      title: pais
+      enum:
+        - '01'
+        - '02'
+        - '03'
+        - '04'
+        - '05'
+        - '06'
+        - '07'
+        - '8'
+        - '9'
+        - '10'
+        - '11'
+        - '12'
+        - '13'
+        - '14'
+        - '15'
+        - '16'
+        - '17'
+        - '18'
+        - '19'
+        - '20'
+        - '21'
+        - '22'
+        - '23'
+        - '24'
+        - '25'
+        - '26'
+        - '27'
+        - '28'
+        - '29'
+        - '30'
+        - '31'
+        - '32'
+        - '33'
+        - '34'
+        - '35'
+        - '36'
+        - '37'
+        - '38'
+        - '39'
+        - '40'
+        - '41'
+        - '42'
+        - '43'
+        - '44'
+        - '45'
+        - '46'
+        - '47'
+        - '48'
+        - '49'
+        - '50'
+        - '51'
+        - '52'
+        - '53'
+        - '54'
+        - '55'
+        - '56'
+        - '57'
+        - '58'
+        - '59'
+        - '60'
+        - '61'
+        - '62'
+        - '63'
+        - '64'
+        - '65'
+        - '66'
+        - '67'
+        - '68'
+        - '69'
+        - '70'
+        - '71'
+        - '72'
+        - '73'
+        - '74'
+        - '75'
+        - '76'
+        - '77'
+        - '78'
+        - '79'
+        - '80'
+        - '81'
+        - '82'
+        - '83'
+        - '84'
+        - '85'
+        - '86'
+        - '87'
+        - '88'
+        - '89'
+        - '90'
+        - '91'
+        - '92'
+        - '93'
+        - '94'
+        - '95'
+        - '96'
+        - '97'
+        - '98'
+        - '99'
+        - AF
+        - AG
+        - AI
+        - AL
+        - AW
+        - AZ
+        - BB
+        - BH
+        - BM
+        - BN
+        - BO
+        - BS
+        - BZ
+        - CC
+        - CI
+        - CK
+        - CS
+        - CV
+        - CX
+        - DJ
+        - DM
+        - DO
+        - ET
+        - GD
+        - GH
+        - GI
+        - GL
+        - GU
+        - GY
+        - HN
+        - IQ
+        - IR
+        - KE
+        - KH
+        - KI
+        - KN
+        - KW
+        - LA
+        - LC
+        - LX
+        - MC
+        - MH
+        - MM
+        - MN
+        - MO
+        - MR
+        - MS
+        - MT
+        - MV
+        - NA
+        - NE
+        - NF
+        - NP
+        - NU
+        - PA
+        - PF
+        - PM
+        - PN
+        - PW
+        - QA
+        - RS
+        - SB
+        - SC
+        - SD
+        - SH
+        - SJ
+        - SM
+        - ST
+        - SZ
+        - TC
+        - TJ
+        - TK
+        - TM
+        - TO
+        - TT
+        - TV
+        - TZ
+        - UG
+        - VC
+        - VI
+        - VU
+        - WS
+        - ZW
   securitySchemes:
     API Key:
       type: http
