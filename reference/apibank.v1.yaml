@@ -88,28 +88,17 @@ paths:
                     declaracionJurada:
                       type: string
                     conyuge:
-                      title: conyuge
-                      type: object
-                      properties:
-                        tipoDocumento:
-                          type: string
-                        nroDocumento:
-                          type: string
-                        apellido:
-                          type: string
-                        nombre:
-                          type: string
-                        telefono:
-                          title: telefono
-                          type: object
-                          properties:
-                            codigoArea:
-                              type: string
-                            nro:
-                              type: string
+                      $ref: '#/components/schemas/conyuge'
                     domicilio:
                       title: domicilio_telefonos
                       type: object
+                      required:
+                        - calleid
+                        - nro
+                        - localidad
+                        - codigoPostal
+                        - pais
+                        - celular
                       properties:
                         calleid:
                           type: string
@@ -136,51 +125,20 @@ paths:
                             nro:
                               type: string
                         celular:
-                          title: telefono_reuqerido
-                          type: object
-                          properties:
-                            codigoArea:
-                              type: string
-                            nro:
-                              type: string
-                          required:
-                            - codigoArea
-                            - nro
+                          $ref: '#/components/schemas/telefono_reuqerido'
                         telefonoLaboral:
-                          title: telefono
-                          type: object
-                          properties:
-                            codigoArea:
-                              type: string
-                            nro:
-                              type: string
+                          $ref: '#/components/schemas/telefono'
                         telefonoLaboral2:
-                          title: telefono
-                          type: object
-                          properties:
-                            codigoArea:
-                              type: string
-                            nro:
-                              type: string
+                          $ref: '#/components/schemas/telefono'
                         '':
                           type: string
-                      required:
-                        - calleid
-                        - nro
-                        - localidad
-                        - codigoPostal
-                        - pais
-                        - celular
                     cotitulares:
                       type: array
                       items:
                         title: cotitular
-                        type: object
-                        properties:
-                          tipoDocumento:
-                            type: string
-                          nroDocumento:
-                            type: string
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/cotitular'
                     renaper:
                       type: object
                       required:
@@ -188,6 +146,8 @@ paths:
                       properties:
                         domicilio:
                           $ref: '#/components/schemas/domicilio'
+                        '':
+                          type: string
                     cuentaNueva:
                       type: string
                       enum:
@@ -199,18 +159,7 @@ paths:
                         - A
                         - R
                     pep:
-                      title: pep
-                      type: object
-                      properties:
-                        fecha:
-                          type: string
-                        pep:
-                          type: string
-                          enum:
-                            - S
-                            - 'N'
-                      required:
-                        - pep
+                      $ref: '#/components/schemas/pep'
                     tipoPersona:
                       type: string
                       enum:
@@ -224,15 +173,7 @@ paths:
                     lugarNacimiento:
                       type: string
                     mail:
-                      title: mail
-                      type: object
-                      properties:
-                        mail:
-                          type: string
-                        mailLaboral:
-                          type: string
-                      required:
-                        - mail
+                      $ref: '#/components/schemas/mail'
                     categoriaIva:
                       type: string
                       enum:
@@ -248,21 +189,7 @@ paths:
                         ocupacion:
                           type: string
                         ingresos:
-                          title: ingresos
-                          type: object
-                          properties:
-                            periodo:
-                              type: string
-                            sueldo:
-                              type: number
-                            sueldoNosis:
-                              type: number
-                            otrosIngresos:
-                              type: number
-                          required:
-                            - periodo
-                            - sueldo
-                            - sueldoNosis
+                          $ref: '#/components/schemas/ingresos'
                     tipoDocumento:
                       type: string
                     nroDocumento:
@@ -1048,34 +975,26 @@ components:
     persona_cuenta_nueva:
       title: persona_cuenta_nueva
       type: object
+      x-tags:
+        - Bank
+        - Sandboard
       properties:
         estadoCivil:
           type: string
         declaracionJurada:
           type: string
         conyuge:
-          title: conyuge
-          type: object
-          properties:
-            tipoDocumento:
-              type: string
-            nroDocumento:
-              type: string
-            apellido:
-              type: string
-            nombre:
-              type: string
-            telefono:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
+          $ref: '#/components/schemas/conyuge'
         domicilio:
           title: domicilio_telefonos
           type: object
+          required:
+            - calleid
+            - nro
+            - localidad
+            - codigoPostal
+            - pais
+            - celular
           properties:
             calleid:
               type: string
@@ -1102,16 +1021,7 @@ components:
                 nro:
                   type: string
             celular:
-              title: telefono_reuqerido
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-              required:
-                - codigoArea
-                - nro
+              $ref: '#/components/schemas/telefono_reuqerido'
             telefonoLaboral:
               title: telefono
               type: object
@@ -1130,13 +1040,6 @@ components:
                   type: string
             '':
               type: string
-          required:
-            - calleid
-            - nro
-            - localidad
-            - codigoPostal
-            - pais
-            - celular
         cotitulares:
           type: array
           items:
@@ -1167,6 +1070,8 @@ components:
         pep:
           title: pep
           type: object
+          required:
+            - pep
           properties:
             fecha:
               type: string
@@ -1175,8 +1080,6 @@ components:
               enum:
                 - S
                 - 'N'
-          required:
-            - pep
         tipoPersona:
           type: string
           enum:
@@ -1192,13 +1095,13 @@ components:
         mail:
           title: mail
           type: object
+          required:
+            - mail
           properties:
             mail:
               type: string
             mailLaboral:
               type: string
-          required:
-            - mail
         categoriaIva:
           type: string
           enum:
