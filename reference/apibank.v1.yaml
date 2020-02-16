@@ -1,0 +1,1281 @@
+openapi: 3.0.0
+info:
+  title: apibank
+  version: '1.0'
+  contact:
+    name: Jorge Sagasti
+    email: jorge@sagasti.com
+  license:
+    name: Apache 2.0
+servers:
+  - url: 'http://localhost:8383/apiOma/api'
+    description: localhost
+paths:
+  /OnBoarding:
+    post:
+      summary: ''
+      operationId: post-OnBoarding
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  respuesta:
+                    title: BaseResponse
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      mensaje:
+                        type: string
+                  identificacion:
+                    title: identificacion
+                    type: object
+                    properties:
+                      tipoDocumento:
+                        type: string
+                      nroDocumento:
+                        type: string
+                  cuenta:
+                    type: array
+                    items:
+                      title: cuenta
+                      type: object
+                      properties:
+                        iipoCuentad:
+                          type: string
+                        nroCuenta:
+                          type: string
+                        aliasCuenta:
+                          type: string
+                        cbuCuenta:
+                          type: string
+              examples: {}
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+            multipart/form-data:
+              schema:
+                type: object
+                properties: {}
+            text/html:
+              schema:
+                type: object
+                properties: {}
+            text/plain:
+              schema:
+                type: object
+                properties:
+                  '':
+                    type: string
+          headers: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                persona:
+                  title: persona_cuenta_nueva
+                  type: object
+                  properties:
+                    estadoCivil:
+                      type: string
+                    declaracionJurada:
+                      type: string
+                    conyuge:
+                      title: conyuge
+                      type: object
+                      properties:
+                        tipoDocumento:
+                          type: string
+                        nroDocumento:
+                          type: string
+                        apellido:
+                          type: string
+                        nombre:
+                          type: string
+                        telefono:
+                          title: telefono
+                          type: object
+                          properties:
+                            codigoArea:
+                              type: string
+                            nro:
+                              type: string
+                    domicilio:
+                      title: domicilio_telefonos
+                      type: object
+                      properties:
+                        calleid:
+                          type: string
+                        nro:
+                          type: string
+                        piso:
+                          type: string
+                        departamento:
+                          type: string
+                        localidad:
+                          type: string
+                        codigoPostal:
+                          type: string
+                        pais:
+                          type: string
+                        provincia:
+                          type: string
+                        telefonoParticular:
+                          title: telefono
+                          type: object
+                          properties:
+                            codigoArea:
+                              type: string
+                            nro:
+                              type: string
+                        celular:
+                          title: telefono_reuqerido
+                          type: object
+                          properties:
+                            codigoArea:
+                              type: string
+                            nro:
+                              type: string
+                          required:
+                            - codigoArea
+                            - nro
+                        telefonoLaboral:
+                          title: telefono
+                          type: object
+                          properties:
+                            codigoArea:
+                              type: string
+                            nro:
+                              type: string
+                        telefonoLaboral2:
+                          title: telefono
+                          type: object
+                          properties:
+                            codigoArea:
+                              type: string
+                            nro:
+                              type: string
+                        '':
+                          type: string
+                      required:
+                        - calleid
+                        - nro
+                        - localidad
+                        - codigoPostal
+                        - pais
+                        - celular
+                    cotitulares:
+                      type: array
+                      items:
+                        title: cotitular
+                        type: object
+                        properties:
+                          tipoDocumento:
+                            type: string
+                          nroDocumento:
+                            type: string
+                    renaper:
+                      type: object
+                      required:
+                        - domicilio
+                      properties:
+                        domicilio:
+                          $ref: '#/components/schemas/domicilio'
+                    cuentaNueva:
+                      type: string
+                      enum:
+                        - S
+                        - 'N'
+                    modalidadTrabajo:
+                      type: string
+                      enum:
+                        - A
+                        - R
+                    pep:
+                      title: pep
+                      type: object
+                      properties:
+                        fecha:
+                          type: string
+                        pep:
+                          type: string
+                          enum:
+                            - S
+                            - 'N'
+                      required:
+                        - pep
+                    tipoPersona:
+                      type: string
+                      enum:
+                        - '01'
+                        - '02'
+                    sexo:
+                      type: string
+                      enum:
+                        - F
+                        - M
+                    lugarNacimiento:
+                      type: string
+                    mail:
+                      title: mail
+                      type: object
+                      properties:
+                        mail:
+                          type: string
+                        mailLaboral:
+                          type: string
+                      required:
+                        - mail
+                    categoriaIva:
+                      type: string
+                      enum:
+                        - '01'
+                        - '02'
+                        - '03'
+                        - '04'
+                        - '06'
+                    empleo:
+                      title: empleo
+                      type: object
+                      properties:
+                        ocupacion:
+                          type: string
+                        ingresos:
+                          title: ingresos
+                          type: object
+                          properties:
+                            periodo:
+                              type: string
+                            sueldo:
+                              type: number
+                            sueldoNosis:
+                              type: number
+                            otrosIngresos:
+                              type: number
+                          required:
+                            - periodo
+                            - sueldo
+                            - sueldoNosis
+                    tipoDocumento:
+                      type: string
+                    nroDocumento:
+                      type: string
+                    cuit:
+                      type: string
+                    apellido:
+                      type: string
+                    nombre:
+                      type: string
+                    nacionalidad:
+                      type: string
+                    fechaNacimiento:
+                      type: string
+                      format: date
+                  required:
+                    - estadoCivil
+                    - domicilio
+                    - renaper
+                    - cuentaNueva
+                    - modalidadTrabajo
+                    - pep
+                    - tipoPersona
+                    - sexo
+                    - lugarNacimiento
+                    - mail
+                    - categoriaIva
+                    - empleo
+                    - tipoDocumento
+                    - nroDocumento
+                    - cuit
+                    - apellido
+                    - nombre
+                    - nacionalidad
+                    - fechaNacimiento
+            examples:
+              example-1: {}
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: UserAuthorization
+          required: true
+      security:
+        - API Key: []
+  /ConsultaCuenta:
+    post:
+      summary: ''
+      operationId: post-apiOma-api-ConsultaCuenta
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+    parameters: []
+  /ConsultaSaldo:
+    post:
+      summary: ''
+      operationId: post-ConsultaSaldo
+      responses:
+        '200':
+          description: OK
+  /ConsultaSaldoPorCuenta:
+    post:
+      summary: ''
+      operationId: post-ConsultaSaldoPorCuenta
+      responses:
+        '200':
+          description: OK
+  /ConsultaCuentaPorCuenta:
+    post:
+      summary: ''
+      operationId: post-ConsultaCuentaPorCuenta
+      responses:
+        '200':
+          description: OK
+  /ConsultaMovimientos:
+    post:
+      summary: ''
+      operationId: post-ConsultaMovimientos
+      responses:
+        '200':
+          description: OK
+  /ConsultaMovimientosDiferidos:
+    post:
+      summary: ''
+      operationId: post-ConsultaMovimientosDiferidos
+      responses:
+        '200':
+          description: OK
+  /ConsultaCbuAlias:
+    post:
+      summary: ''
+      operationId: post-ConsultaCbuAlias
+      responses:
+        '200':
+          description: OK
+  /ConsultaOperacion:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConsultaOperacion
+      responses:
+        '200':
+          description: OK
+  /GeneracionOTCconMail:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postGeneracionOTCconMail
+      responses:
+        '200':
+          description: OK
+  /GeneracionOTCsinMail:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postGeneracionOTCsinMail
+      responses:
+        '200':
+          description: OK
+  /ResyncToken:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postResyncToken
+      responses:
+        '200':
+          description: OK
+  /CrearUsuario:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postCrearUsuario
+      responses:
+        '200':
+          description: OK
+  /CambioPassword:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postCambioPassword
+      responses:
+        '200':
+          description: OK
+  /ForzarCambioPassword:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postForzarCambioPassword
+      responses:
+        '200':
+          description: OK
+  /Autenticación:
+    post:
+      summary: ''
+      operationId: post-Autenticaci-n
+      responses:
+        '200':
+          description: OK
+  /RefreshTokenSession:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postRefreshTokenSession
+      responses:
+        '200':
+          description: OK
+  /ValidarUsuario:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postValidarUsuario
+      responses:
+        '200':
+          description: OK
+  /ValidarPassword:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postValidarPassword
+      responses:
+        '200':
+          description: OK
+  /GetUsuario:
+    post:
+      summary: ''
+      operationId: post-GetUsuario
+      responses:
+        '200':
+          description: OK
+  /LogOut:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postLogOut
+      responses:
+        '200':
+          description: OK
+  /RecuperarUsuario:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postRecuperarUsuario
+      responses:
+        '200':
+          description: OK
+  /ConsultaAgenda:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConsultaAgenda
+      responses:
+        '200':
+          description: OK
+  /AltaBeneficiario:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postAltaBeneficiario
+      responses:
+        '200':
+          description: OK
+  /ModificarBeneficiario:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postModificarBeneficiario
+      responses:
+        '200':
+          description: OK
+  /EliminarBeneficiario:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postEliminarBeneficiario
+      responses:
+        '200':
+          description: OK
+  /GenerarTransaccion:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postGenerarTransaccion
+      responses:
+        '200':
+          description: OK
+  /ConsultaPrecio:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConsultaPrecio
+      responses:
+        '200':
+          description: OK
+  /Conversor:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConversor
+      responses:
+        '200':
+          description: OK
+  /GenerarCompraVenta:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postGenerarCompraVenta
+      responses:
+        '200':
+          description: OK
+  /ConsultaTasa:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConsultaTasa
+      responses:
+        '200':
+          description: OK
+  /CalculoInteres:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postCalculoInteres
+      responses:
+        '200':
+          description: OK
+  /GenerarPlazoFijo:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postGenerarPlazoFijo
+      responses:
+        '200':
+          description: OK
+  /ModificarPlazoFijo:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postModificarPlazoFijo
+      responses:
+        '200':
+          description: OK
+  /ConsultaPlazoFijo:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConsultaPlazoFijo
+      responses:
+        '200':
+          description: OK
+  /ConsultaPrestamos:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConsultaPrestamos
+      responses:
+        '200':
+          description: OK
+  /ConsultaCuotas:
+    parameters: []
+    post:
+      summary: ''
+      operationId: postConsultaCuotas
+      responses:
+        '200':
+          description: OK
+  /GenerarPrestamo:
+    post:
+      summary: ''
+      operationId: post-apiOma-api-GenerarPrestamo
+      responses:
+        '200':
+          description: OK
+    parameters: []
+  /ModificarPersona:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+      operationId: get-ModificarPersona
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ''
+components:
+  schemas:
+    domicilio_telefonos:
+      title: domicilio_telefonos
+      type: object
+      properties:
+        calleid:
+          type: string
+        nro:
+          type: string
+        piso:
+          type: string
+        departamento:
+          type: string
+        localidad:
+          type: string
+        codigoPostal:
+          type: string
+        pais:
+          type: string
+        provincia:
+          type: string
+        telefonoParticular:
+          title: telefono
+          type: object
+          properties:
+            codigoArea:
+              type: string
+            nro:
+              type: string
+        celular:
+          title: telefono_reuqerido
+          type: object
+          properties:
+            codigoArea:
+              type: string
+            nro:
+              type: string
+          required:
+            - codigoArea
+            - nro
+        telefonoLaboral:
+          title: telefono
+          type: object
+          properties:
+            codigoArea:
+              type: string
+            nro:
+              type: string
+        telefonoLaboral2:
+          title: telefono
+          type: object
+          properties:
+            codigoArea:
+              type: string
+            nro:
+              type: string
+        '':
+          type: string
+      required:
+        - calleid
+        - nro
+        - localidad
+        - codigoPostal
+        - pais
+        - celular
+    telefono:
+      title: telefono
+      type: object
+      properties:
+        codigoArea:
+          type: string
+        nro:
+          type: string
+    persona:
+      title: persona
+      type: object
+      description: ''
+      properties:
+        nombre:
+          type: string
+        apellido:
+          type: string
+        cuit:
+          type: string
+        nroDocumento:
+          type: string
+        tipoDocumento:
+          type: string
+        empleo:
+          title: empleo
+          type: object
+          properties:
+            ocupacion:
+              type: string
+            ingresos:
+              title: ingresos
+              type: object
+              properties:
+                periodo:
+                  type: string
+                sueldo:
+                  type: number
+                sueldoNosis:
+                  type: number
+                otrosIngresos:
+                  type: number
+              required:
+                - periodo
+                - sueldo
+                - sueldoNosis
+        categoriaIva:
+          type: string
+        mail:
+          title: mail
+          type: object
+          properties:
+            mail:
+              type: string
+            mailLaboral:
+              type: string
+          required:
+            - mail
+        lugarNacimiento:
+          type: string
+        sexo:
+          type: string
+        tipoPersona:
+          type: string
+        pep:
+          title: pep
+          type: object
+          properties:
+            fecha:
+              type: string
+            pep:
+              type: string
+              enum:
+                - S
+                - 'N'
+          required:
+            - pep
+        modalidadTrabajo:
+          type: string
+        renaper:
+          type: object
+          properties:
+            domicilio:
+              title: domicilio
+              type: object
+              properties:
+                pais:
+                  type: string
+                codigoPostal:
+                  type: string
+                localidad:
+                  type: string
+                departamento:
+                  type: string
+                piso:
+                  type: string
+                nro:
+                  type: string
+                calle:
+                  type: string
+              required:
+                - pais
+                - codigoPostal
+                - localidad
+                - nro
+                - calle
+        cotitulares:
+          type: array
+          items:
+            title: cotitular
+            type: object
+            properties:
+              tipoDocumento:
+                type: string
+              nroDocumento:
+                type: string
+        domicilio:
+          title: domicilio_telefonos
+          type: object
+          properties:
+            calleid:
+              type: string
+            nro:
+              type: string
+            piso:
+              type: string
+            departamento:
+              type: string
+            localidad:
+              type: string
+            codigoPostal:
+              type: string
+            pais:
+              type: string
+            provincia:
+              type: string
+            telefonoParticular:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+            celular:
+              title: telefono_reuqerido
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+              required:
+                - codigoArea
+                - nro
+            telefonoLaboral:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+            telefonoLaboral2:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+            '':
+              type: string
+          required:
+            - calleid
+            - nro
+            - localidad
+            - codigoPostal
+            - pais
+            - celular
+        conyuge:
+          title: conyuge
+          type: object
+          properties:
+            tipoDocumento:
+              type: string
+            nroDocumento:
+              type: string
+            apellido:
+              type: string
+            nombre:
+              type: string
+            telefono:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+        declaracionJurada:
+          type: string
+        estadoCivil:
+          type: string
+        nacionalidad:
+          type: string
+      required:
+        - nombre
+        - apellido
+        - cuit
+        - nroDocumento
+        - tipoDocumento
+        - estadoCivil
+        - nacionalidad
+    conyuge:
+      title: conyuge
+      type: object
+      properties:
+        tipoDocumento:
+          type: string
+        nroDocumento:
+          type: string
+        apellido:
+          type: string
+        nombre:
+          type: string
+        telefono:
+          title: telefono
+          type: object
+          properties:
+            codigoArea:
+              type: string
+            nro:
+              type: string
+    empleo:
+      title: empleo
+      type: object
+      properties:
+        ocupacion:
+          type: string
+        ingresos:
+          title: ingresos
+          type: object
+          properties:
+            periodo:
+              type: string
+            sueldo:
+              type: number
+            sueldoNosis:
+              type: number
+            otrosIngresos:
+              type: number
+          required:
+            - periodo
+            - sueldo
+            - sueldoNosis
+    ingresos:
+      title: ingresos
+      type: object
+      properties:
+        periodo:
+          type: string
+        sueldo:
+          type: number
+        sueldoNosis:
+          type: number
+        otrosIngresos:
+          type: number
+      required:
+        - periodo
+        - sueldo
+        - sueldoNosis
+    mail:
+      title: mail
+      type: object
+      properties:
+        mail:
+          type: string
+        mailLaboral:
+          type: string
+      required:
+        - mail
+    pep:
+      title: pep
+      type: object
+      properties:
+        fecha:
+          type: string
+        pep:
+          type: string
+          enum:
+            - S
+            - 'N'
+      required:
+        - pep
+    domicilio_renaper:
+      title: domicilio
+      type: object
+      properties:
+        pais:
+          type: string
+        codigoPostal:
+          type: string
+        localidad:
+          type: string
+        departamento:
+          type: string
+        piso:
+          type: string
+        nro:
+          type: string
+        calle:
+          type: string
+      required:
+        - pais
+        - codigoPostal
+        - localidad
+        - nro
+        - calle
+    cotitular:
+      title: cotitular
+      type: object
+      properties:
+        tipoDocumento:
+          type: string
+        nroDocumento:
+          type: string
+    base_response:
+      title: BaseResponse
+      type: object
+      properties:
+        id:
+          type: string
+        mensaje:
+          type: string
+    identificacion_cuit:
+      title: identificacion_cuit
+      type: object
+      properties:
+        tipoDocumento:
+          type: string
+        nroDocumento:
+          type: string
+        cuit:
+          type: string
+    cuenta:
+      title: cuenta
+      type: object
+      properties:
+        iipoCuentad:
+          type: string
+        nroCuenta:
+          type: string
+        aliasCuenta:
+          type: string
+        cbuCuenta:
+          type: string
+    identificacion:
+      title: identificacion
+      type: object
+      properties:
+        tipoDocumento:
+          type: string
+        nroDocumento:
+          type: string
+    persona_cuenta_nueva:
+      title: persona_cuenta_nueva
+      type: object
+      properties:
+        estadoCivil:
+          type: string
+        declaracionJurada:
+          type: string
+        conyuge:
+          title: conyuge
+          type: object
+          properties:
+            tipoDocumento:
+              type: string
+            nroDocumento:
+              type: string
+            apellido:
+              type: string
+            nombre:
+              type: string
+            telefono:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+        domicilio:
+          title: domicilio_telefonos
+          type: object
+          properties:
+            calleid:
+              type: string
+            nro:
+              type: string
+            piso:
+              type: string
+            departamento:
+              type: string
+            localidad:
+              type: string
+            codigoPostal:
+              type: string
+            pais:
+              type: string
+            provincia:
+              type: string
+            telefonoParticular:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+            celular:
+              title: telefono_reuqerido
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+              required:
+                - codigoArea
+                - nro
+            telefonoLaboral:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+            telefonoLaboral2:
+              title: telefono
+              type: object
+              properties:
+                codigoArea:
+                  type: string
+                nro:
+                  type: string
+            '':
+              type: string
+          required:
+            - calleid
+            - nro
+            - localidad
+            - codigoPostal
+            - pais
+            - celular
+        cotitulares:
+          type: array
+          items:
+            title: cotitular
+            type: object
+            properties:
+              tipoDocumento:
+                type: string
+              nroDocumento:
+                type: string
+        renaper:
+          type: object
+          required:
+            - domicilio
+          properties:
+            domicilio:
+              $ref: '#/components/schemas/domicilio'
+        cuentaNueva:
+          type: string
+          enum:
+            - S
+            - 'N'
+        modalidadTrabajo:
+          type: string
+          enum:
+            - A
+            - R
+        pep:
+          title: pep
+          type: object
+          properties:
+            fecha:
+              type: string
+            pep:
+              type: string
+              enum:
+                - S
+                - 'N'
+          required:
+            - pep
+        tipoPersona:
+          type: string
+          enum:
+            - '01'
+            - '02'
+        sexo:
+          type: string
+          enum:
+            - F
+            - M
+        lugarNacimiento:
+          type: string
+        mail:
+          title: mail
+          type: object
+          properties:
+            mail:
+              type: string
+            mailLaboral:
+              type: string
+          required:
+            - mail
+        categoriaIva:
+          type: string
+          enum:
+            - '01'
+            - '02'
+            - '03'
+            - '04'
+            - '06'
+        empleo:
+          title: empleo
+          type: object
+          properties:
+            ocupacion:
+              type: string
+            ingresos:
+              title: ingresos
+              type: object
+              properties:
+                periodo:
+                  type: string
+                sueldo:
+                  type: number
+                sueldoNosis:
+                  type: number
+                otrosIngresos:
+                  type: number
+              required:
+                - periodo
+                - sueldo
+                - sueldoNosis
+        tipoDocumento:
+          type: string
+        nroDocumento:
+          type: string
+        cuit:
+          type: string
+        apellido:
+          type: string
+        nombre:
+          type: string
+        nacionalidad:
+          type: string
+        fechaNacimiento:
+          type: string
+          format: date
+      required:
+        - estadoCivil
+        - domicilio
+        - renaper
+        - cuentaNueva
+        - modalidadTrabajo
+        - pep
+        - tipoPersona
+        - sexo
+        - lugarNacimiento
+        - mail
+        - categoriaIva
+        - empleo
+        - tipoDocumento
+        - nroDocumento
+        - cuit
+        - apellido
+        - nombre
+        - nacionalidad
+        - fechaNacimiento
+    telefono_reuqerido:
+      title: telefono_reuqerido
+      type: object
+      properties:
+        codigoArea:
+          type: string
+        nro:
+          type: string
+      required:
+        - codigoArea
+        - nro
+  securitySchemes:
+    API Key:
+      type: http
+      scheme: bearer
