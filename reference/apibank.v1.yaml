@@ -978,6 +978,7 @@ components:
       x-tags:
         - Bank
         - Sandboard
+      description: ''
       properties:
         estadoCivil:
           type: string
@@ -986,77 +987,16 @@ components:
         conyuge:
           $ref: '#/components/schemas/conyuge'
         domicilio:
-          title: domicilio_telefonos
-          type: object
-          required:
-            - calleid
-            - nro
-            - localidad
-            - codigoPostal
-            - pais
-            - celular
-          properties:
-            calleid:
-              type: string
-            nro:
-              type: string
-            piso:
-              type: string
-            departamento:
-              type: string
-            localidad:
-              type: string
-            codigoPostal:
-              type: string
-            pais:
-              type: string
-            provincia:
-              type: string
-            telefonoParticular:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-            celular:
-              $ref: '#/components/schemas/telefono_reuqerido'
-            telefonoLaboral:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-            telefonoLaboral2:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-            '':
-              type: string
+          $ref: '#/components/schemas/domicilio_telefonos'
         cotitulares:
           type: array
           items:
-            title: cotitular
-            type: object
-            properties:
-              tipoDocumento:
-                type: string
-              nroDocumento:
-                type: string
+            $ref: '#/components/schemas/cotitular'
         renaper:
           type: object
-          required:
-            - domicilio
           properties:
             domicilio:
-              $ref: '#/components/schemas/domicilio'
+              $ref: '#/components/schemas/domicilio_renaper'
         cuentaNueva:
           type: string
           enum:
@@ -1068,18 +1008,7 @@ components:
             - A
             - R
         pep:
-          title: pep
-          type: object
-          required:
-            - pep
-          properties:
-            fecha:
-              type: string
-            pep:
-              type: string
-              enum:
-                - S
-                - 'N'
+          $ref: '#/components/schemas/pep'
         tipoPersona:
           type: string
           enum:
@@ -1093,15 +1022,7 @@ components:
         lugarNacimiento:
           type: string
         mail:
-          title: mail
-          type: object
-          required:
-            - mail
-          properties:
-            mail:
-              type: string
-            mailLaboral:
-              type: string
+          $ref: '#/components/schemas/mail'
         categoriaIva:
           type: string
           enum:
@@ -1111,27 +1032,7 @@ components:
             - '04'
             - '06'
         empleo:
-          title: empleo
-          type: object
-          properties:
-            ocupacion:
-              type: string
-            ingresos:
-              title: ingresos
-              type: object
-              properties:
-                periodo:
-                  type: string
-                sueldo:
-                  type: number
-                sueldoNosis:
-                  type: number
-                otrosIngresos:
-                  type: number
-              required:
-                - periodo
-                - sueldo
-                - sueldoNosis
+          $ref: '#/components/schemas/empleo'
         tipoDocumento:
           type: string
         nroDocumento:
