@@ -13,7 +13,7 @@ servers:
 paths:
   /OnBoarding:
     post:
-      summary: ''
+      summary: Alta de cliente (OnBoarding)
       operationId: post-OnBoarding
       responses:
         '200':
@@ -32,13 +32,7 @@ paths:
                       mensaje:
                         type: string
                   identificacion:
-                    title: identificacion
-                    type: object
-                    properties:
-                      tipoDocumento:
-                        type: string
-                      nroDocumento:
-                        type: string
+                    $ref: '#/components/schemas/identificacion'
                   cuenta:
                     type: array
                     items:
@@ -80,153 +74,10 @@ paths:
               type: object
               properties:
                 persona:
-                  title: persona_cuenta_nueva
-                  type: object
-                  properties:
-                    estadoCivil:
-                      type: string
-                    declaracionJurada:
-                      type: string
-                    conyuge:
-                      $ref: '#/components/schemas/conyuge'
-                    domicilio:
-                      title: domicilio_telefonos
-                      type: object
-                      required:
-                        - calleid
-                        - nro
-                        - localidad
-                        - codigoPostal
-                        - pais
-                        - celular
-                      properties:
-                        calleid:
-                          type: string
-                        nro:
-                          type: string
-                        piso:
-                          type: string
-                        departamento:
-                          type: string
-                        localidad:
-                          type: string
-                        codigoPostal:
-                          type: string
-                        pais:
-                          type: string
-                        provincia:
-                          type: string
-                        telefonoParticular:
-                          title: telefono
-                          type: object
-                          properties:
-                            codigoArea:
-                              type: string
-                            nro:
-                              type: string
-                        celular:
-                          $ref: '#/components/schemas/telefono_reuqerido'
-                        telefonoLaboral:
-                          $ref: '#/components/schemas/telefono'
-                        telefonoLaboral2:
-                          $ref: '#/components/schemas/telefono'
-                        '':
-                          type: string
-                    cotitulares:
-                      type: array
-                      items:
-                        title: cotitular
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/cotitular'
-                    renaper:
-                      type: object
-                      required:
-                        - domicilio
-                      properties:
-                        domicilio:
-                          $ref: '#/components/schemas/domicilio_telefonos'
-                        '':
-                          type: string
-                    cuentaNueva:
-                      type: string
-                      enum:
-                        - S
-                        - 'N'
-                    modalidadTrabajo:
-                      type: string
-                      enum:
-                        - A
-                        - R
-                    pep:
-                      $ref: '#/components/schemas/pep'
-                    tipoPersona:
-                      type: string
-                      enum:
-                        - '01'
-                        - '02'
-                    sexo:
-                      type: string
-                      enum:
-                        - F
-                        - M
-                    lugarNacimiento:
-                      type: string
-                    mail:
-                      $ref: '#/components/schemas/mail'
-                    categoriaIva:
-                      type: string
-                      enum:
-                        - '01'
-                        - '02'
-                        - '03'
-                        - '04'
-                        - '06'
-                    empleo:
-                      title: empleo
-                      type: object
-                      properties:
-                        ocupacion:
-                          type: string
-                        ingresos:
-                          $ref: '#/components/schemas/ingresos'
-                    tipoDocumento:
-                      type: string
-                    nroDocumento:
-                      type: string
-                    cuit:
-                      type: string
-                    apellido:
-                      type: string
-                    nombre:
-                      type: string
-                    nacionalidad:
-                      type: string
-                    fechaNacimiento:
-                      type: string
-                      format: date
-                  required:
-                    - estadoCivil
-                    - domicilio
-                    - renaper
-                    - cuentaNueva
-                    - modalidadTrabajo
-                    - pep
-                    - tipoPersona
-                    - sexo
-                    - lugarNacimiento
-                    - mail
-                    - categoriaIva
-                    - empleo
-                    - tipoDocumento
-                    - nroDocumento
-                    - cuit
-                    - apellido
-                    - nombre
-                    - nacionalidad
-                    - fechaNacimiento
+                  $ref: '#/components/schemas/persona_cuenta_nueva'
             examples:
               example-1: {}
+        description: Onboaring de Clientes
       parameters:
         - schema:
             type: string
@@ -248,6 +99,7 @@ paths:
             schema:
               type: object
               properties: {}
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
     parameters: []
   /ConsultaSaldo:
     post:
@@ -294,11 +146,13 @@ paths:
   /ConsultaOperacion:
     parameters: []
     post:
-      summary: ''
+      summary: Consulta de operaciones activas
       operationId: postConsultaOperacion
       responses:
         '200':
           description: OK
+      tags:
+        - Operación
   /GeneracionOTCconMail:
     parameters: []
     post:
@@ -307,6 +161,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Generación y Validación de Tokens
   /GeneracionOTCsinMail:
     parameters: []
     post:
@@ -315,38 +171,48 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Generación y Validación de Tokens
   /ResyncToken:
     parameters: []
     post:
-      summary: ''
+      summary: Resync Token
       operationId: postResyncToken
       responses:
         '200':
           description: OK
+      tags:
+        - Generación y Validación de Tokens
   /CrearUsuario:
     parameters: []
     post:
-      summary: ''
+      summary: Alta de usuario Digital
       operationId: postCrearUsuario
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /CambioPassword:
     parameters: []
     post:
-      summary: ''
+      summary: Cambio de password
       operationId: postCambioPassword
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /ForzarCambioPassword:
     parameters: []
     post:
-      summary: ''
+      summary: Forzar cambio de password
       operationId: postForzarCambioPassword
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /RefreshTokenSession:
     parameters: []
     post:
@@ -355,6 +221,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /ValidarUsuario:
     parameters: []
     post:
@@ -363,6 +231,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /ValidarPassword:
     parameters: []
     post:
@@ -371,6 +241,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /GetUsuario:
     post:
       summary: Consulta de Usuario (Tipo y Nro de documento y password)
@@ -386,6 +258,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /RecuperarUsuario:
     parameters: []
     post:
@@ -394,6 +268,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Usuario
   /ConsultaAgenda:
     parameters: []
     post:
@@ -402,6 +278,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Agenda de Beneficiarios
   /AltaBeneficiario:
     parameters: []
     post:
@@ -410,6 +288,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Agenda de Beneficiarios
   /ModificarBeneficiario:
     parameters: []
     post:
@@ -418,6 +298,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Agenda de Beneficiarios
   /EliminarBeneficiario:
     parameters: []
     post:
@@ -426,6 +308,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Agenda de Beneficiarios
   /GenerarTransaccion:
     parameters: []
     post:
@@ -434,6 +318,9 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Transferencias
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
   /ConsultaPrecio:
     parameters: []
     post:
@@ -442,6 +329,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Compra/Venta
   /Conversor:
     parameters: []
     post:
@@ -450,6 +339,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Compra/Venta
   /GenerarCompraVenta:
     parameters: []
     post:
@@ -458,6 +349,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Compra/Venta
   /ConsultaTasa:
     parameters: []
     post:
@@ -466,6 +359,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Plazo Fijo
   /CalculoInteres:
     parameters: []
     post:
@@ -474,6 +369,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Plazo Fijo
   /GenerarPlazoFijo:
     parameters: []
     post:
@@ -482,6 +379,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Plazo Fijo
   /ModificarPlazoFijo:
     parameters: []
     post:
@@ -490,6 +389,8 @@ paths:
       responses:
         '200':
           description: OK
+      tags:
+        - Plazo Fijo
   /ConsultaPlazoFijo:
     parameters: []
     post:
@@ -524,8 +425,9 @@ paths:
     parameters: []
   /ModificarPersona:
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Modificación de persona
+      tags:
+        - Persona
       responses:
         '200':
           description: OK
@@ -535,6 +437,54 @@ paths:
           application/json:
             schema:
               $ref: ''
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
+    post:
+      summary: ''
+      operationId: post-ModificarPersona
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Persona
+  /ConsultaModPersona:
+    post:
+      summary: Consulta de datos modificables de persona
+      operationId: post-consultaModPersona
+      responses:
+        '200':
+          description: OK
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
+      tags:
+        - Persona
+    parameters: []
+  /ValidacionOTC:
+    post:
+      summary: Validación OTC
+      operationId: post-ValidacionOTC
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Generación y Validación de Tokens
+  /ActivarToken:
+    post:
+      summary: Generación y Activación de Token
+      operationId: post-ActivarToken
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Generación y Validación de Tokens
+      description: ''
+  /Auth:
+    post:
+      summary: Autenticación (LogIn)
+      operationId: post-Auth
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Usuario
 components:
   schemas:
     domicilio_telefonos:
@@ -566,32 +516,11 @@ components:
             nro:
               type: string
         celular:
-          title: telefono_reuqerido
-          type: object
-          properties:
-            codigoArea:
-              type: string
-            nro:
-              type: string
-          required:
-            - codigoArea
-            - nro
+          $ref: '#/components/schemas/telefono_requerido'
         telefonoLaboral:
-          title: telefono
-          type: object
-          properties:
-            codigoArea:
-              type: string
-            nro:
-              type: string
+          $ref: '#/components/schemas/telefono'
         telefonoLaboral2:
-          title: telefono
-          type: object
-          properties:
-            codigoArea:
-              type: string
-            nro:
-              type: string
+          $ref: '#/components/schemas/telefono'
         '':
           type: string
       required:
@@ -649,15 +578,7 @@ components:
         categoriaIva:
           type: string
         mail:
-          title: mail
-          type: object
-          properties:
-            mail:
-              type: string
-            mailLaboral:
-              type: string
-          required:
-            - mail
+          $ref: '#/components/schemas/mail'
         lugarNacimiento:
           type: string
         sexo:
@@ -665,141 +586,25 @@ components:
         tipoPersona:
           type: string
         pep:
-          title: pep
-          type: object
-          properties:
-            fecha:
-              type: string
-            pep:
-              type: string
-              enum:
-                - S
-                - 'N'
-          required:
-            - pep
+          $ref: '#/components/schemas/pep'
         modalidadTrabajo:
           type: string
+          enum:
+            - '1'
+            - '2'
         renaper:
           type: object
           properties:
             domicilio:
-              title: domicilio
-              type: object
-              properties:
-                pais:
-                  type: string
-                codigoPostal:
-                  type: string
-                localidad:
-                  type: string
-                departamento:
-                  type: string
-                piso:
-                  type: string
-                nro:
-                  type: string
-                calle:
-                  type: string
-              required:
-                - pais
-                - codigoPostal
-                - localidad
-                - nro
-                - calle
+              $ref: '#/components/schemas/domicilio_renaper'
         cotitulares:
           type: array
           items:
-            title: cotitular
-            type: object
-            properties:
-              tipoDocumento:
-                type: string
-              nroDocumento:
-                type: string
+            $ref: '#/components/schemas/cotitular'
         domicilio:
-          title: domicilio_telefonos
-          type: object
-          properties:
-            calleid:
-              type: string
-            nro:
-              type: string
-            piso:
-              type: string
-            departamento:
-              type: string
-            localidad:
-              type: string
-            codigoPostal:
-              type: string
-            pais:
-              type: string
-            provincia:
-              type: string
-            telefonoParticular:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-            celular:
-              title: telefono_reuqerido
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-              required:
-                - codigoArea
-                - nro
-            telefonoLaboral:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-            telefonoLaboral2:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
-            '':
-              type: string
-          required:
-            - calleid
-            - nro
-            - localidad
-            - codigoPostal
-            - pais
-            - celular
+          $ref: '#/components/schemas/domicilio_telefonos'
         conyuge:
-          title: conyuge
-          type: object
-          properties:
-            tipoDocumento:
-              type: string
-            nroDocumento:
-              type: string
-            apellido:
-              type: string
-            nombre:
-              type: string
-            telefono:
-              title: telefono
-              type: object
-              properties:
-                codigoArea:
-                  type: string
-                nro:
-                  type: string
+          $ref: '#/components/schemas/conyuge'
         declaracionJurada:
           type: string
         estadoCivil:
@@ -827,13 +632,8 @@ components:
         nombre:
           type: string
         telefono:
-          title: telefono
-          type: object
-          properties:
-            codigoArea:
-              type: string
-            nro:
-              type: string
+          $ref: '#/components/schemas/telefono'
+      description: ''
     empleo:
       title: empleo
       type: object
@@ -856,7 +656,7 @@ components:
             - periodo
             - sueldo
             - sueldoNosis
-    ingresos:
+    ingresos_nosis:
       title: ingresos
       type: object
       properties:
@@ -900,19 +700,25 @@ components:
       type: object
       properties:
         pais:
-          type: string
+          $ref: '#/components/schemas/pais'
         codigoPostal:
           type: string
+          description: Código postal obtenido en Renaper
         localidad:
           type: string
+          description: Localidad obtenida en Renaper
         departamento:
           type: string
+          description: Departamento obtenido en Renaper
         piso:
           type: string
+          description: Piso obtenido en Renaper
         nro:
           type: string
+          description: Numero de calle obtenido en Renaper
         calle:
           type: string
+          description: Calle obtenida en Renaper
       required:
         - pais
         - codigoPostal
@@ -947,16 +753,22 @@ components:
           type: string
     cuenta:
       title: cuenta
-      type: object
-      properties:
-        iipoCuentad:
-          type: string
-        nroCuenta:
-          type: string
-        aliasCuenta:
-          type: string
-        cbuCuenta:
-          type: string
+      type: array
+      description: ''
+      items:
+        type: object
+        properties:
+          tipoCuenta:
+            type: string
+            description: Tipo de cuenta (Tabla de equivalencias de Tipos de Cuentas)
+          descripcion:
+            type: string
+          nroCuenta:
+            type: string
+          saldoTotal:
+            type: number
+          listaPorEspecie:
+            $ref: '#/components/schemas/lista_por_especie'
     identificacion:
       title: identificacion
       type: object
@@ -968,7 +780,6 @@ components:
     persona_cuenta_nueva:
       title: persona_cuenta_nueva
       type: object
-      description: ''
       properties:
         estadoCivil:
           type: string
@@ -1058,17 +869,7 @@ components:
         - nombre
         - nacionalidad
         - fechaNacimiento
-    telefono_reuqerido:
-      title: telefono_reuqerido
-      type: object
-      properties:
-        codigoArea:
-          type: string
-        nro:
-          type: string
-      required:
-        - codigoArea
-        - nro
+      description: ''
     pais:
       type: string
       title: pais
@@ -1255,6 +1056,75 @@ components:
         - VU
         - WS
         - ZW
+      description: Código según tabla de equivalencias de País
+    especie:
+      title: especie
+      type: object
+      properties:
+        codigo:
+          type: string
+        descripcion:
+          type: string
+    cuenta_response:
+      title: cuenta_response
+      type: object
+      properties:
+        tipoCuenta:
+          type: string
+        descripcion:
+          type: string
+        nroCuenta:
+          type: string
+        aliasCuenta:
+          type: string
+        cbuCuenta:
+          type: string
+        estado:
+          type: string
+    saldo:
+      title: saldo
+      type: object
+      properties:
+        total:
+          type: number
+        disponible:
+          type: number
+        inmovilizado:
+          type: number
+        proyectado:
+          type: number
+        enPesos:
+          type: number
+    lista_por_especie:
+      title: lista_por_especie
+      type: array
+      items:
+        type: object
+        properties:
+          moneda:
+            type: string
+          especie:
+            $ref: '#/components/schemas/especie'
+          saldo:
+            $ref: '#/components/schemas/saldo'
+          acuerdos:
+            type: number
+          bloqueada:
+            type: string
+            enum:
+              - S
+              - 'N'
+    telefono_requerido:
+      title: telefono_requerido
+      type: object
+      properties:
+        codigoArea:
+          type: string
+        nro:
+          type: string
+      required:
+        - codigoArea
+        - nro
   securitySchemes:
     API Key:
       type: http
