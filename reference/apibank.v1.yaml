@@ -1,4322 +1,2845 @@
-{
-  "swagger": "2.0",
-  "info": {
-    "version": "v1",
-    "title": "Pines.ApiOma"
-  },
-  "host": "homoapiomamw.bancointerfinanzas.com.ar",
-  "basePath": "/pines.apioma",
-  "schemes": [
-    "http",
-    "https"
-  ],
-  "paths": {
-    "/api/ConsultaAgenda": {
-      "post": {
-        "tags": [
-          "Agenda"
-        ],
-        "operationId": "Agenda_Post_ConsultaAgenda",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.RequestAgenda"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.ResponseAgenda"
-            }
-          }
-        }
-      }
-    },
-    "/api/AltaBeneficiario": {
-      "post": {
-        "tags": [
-          "Agenda"
-        ],
-        "operationId": "Agenda_Post_AltaBeneficiario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.RequestAltaBeneficiario"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.ResponseAltaBeneficiario"
-            }
-          }
-        }
-      }
-    },
-    "/api/ModificarBeneficiario": {
-      "post": {
-        "tags": [
-          "Agenda"
-        ],
-        "operationId": "Agenda_Post_ModficarBeneficiario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.RequestModBeneficiario"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.ResponseModBeneficiario"
-            }
-          }
-        }
-      }
-    },
-    "/api/EliminarBeneficiario": {
-      "post": {
-        "tags": [
-          "Agenda"
-        ],
-        "operationId": "Agenda_Post_EliminarBeneficiario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.RequestBajaBeneficiario"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.ResponseModBeneficiario"
-            }
-          }
-        }
-      }
-    },
-    "/api/GetUsuario": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Get_Usuario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestGetUsuario"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.Response.ResponseGetUsuario"
-            }
-          }
-        }
-      }
-    },
-    "/api/RecuperarUsuario": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Get_RecuperarUsuario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestRecuperarUsuario"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.Response.ResponseGetUsuario"
-            }
-          }
-        }
-      }
-    },
-    "/api/LogIn": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_LogIn",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestLogIn"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseToken"
-            }
-          }
-        }
-      }
-    },
-    "/api/LogOut": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_LogOut",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestLogOut"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth"
-            }
-          }
-        }
-      }
-    },
-    "/api/CambioPassword": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_CambioPassword",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestCambioPassword"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth"
-            }
-          }
-        }
-      }
-    },
-    "/api/CrearUsuario": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_CrearUsuario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestCrearCuenta"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth"
-            }
-          }
-        }
-      }
-    },
-    "/api/BloquearUsuario": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_BloquearUsuario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestAuth"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth"
-            }
-          }
-        }
-      }
-    },
-    "/api/RefreshTokenSession": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_RefreshTokenSession",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestLogOut"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseToken"
-            }
-          }
-        }
-      }
-    },
-    "/api/ForzarCambioPassword": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_ForzarCambioPassword",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestAuth"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth"
-            }
-          }
-        }
-      }
-    },
-    "/api/ValidarPassword": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_ValidarPassword",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestValidarPassword"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth"
-            }
-          }
-        }
-      }
-    },
-    "/api/ValidarUsuario": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "operationId": "Auth_Post_ValidarUsuario",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.RequestValidarUsuario"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth"
-            }
-          }
-        }
-      }
-    },
-    "/api/GenerarCompraVenta": {
-      "post": {
-        "tags": [
-          "CompraVenta"
-        ],
-        "operationId": "CompraVenta_Post_GenerarCompraVenta",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.CompraVenta.RequestCompraVenta"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.CompraVenta.ResponseCompraVenta"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaSaldo": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ConsultaSaldo",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestSaldo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseSaldo"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaCuenta": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ConsultaCuenta",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestCuenta"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCuenta"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaCuentaPorCuenta": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ConsultaCuentaPorCuenta",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestCuentaPorCuenta"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCuentaPorCuenta"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaSaldoPorCuenta": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ConsultaSaldoPorCuenta",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestSaldoPorCuenta"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseSaldoPorCuenta"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaMovimientosDiferidos": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ConsultaMovimientosDiferidos",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestMovimientoDiferido"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseMovimientoDiferido"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaMovimientos": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ConsultaMovimientos",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestMovimiento"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseMovimiento"
-            }
-          }
-        }
-      }
-    },
-    "/api/ModificarAlias": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ModificarAlias",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestModiAlias"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseModiAlias"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaCbuAlias": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_ConsultaCbuAlias",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestCbuAlias"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCbu"
-            }
-          }
-        }
-      }
-    },
-    "/api/EliminarCBU": {
-      "post": {
-        "tags": [
-          "Cuenta"
-        ],
-        "operationId": "Cuenta_Post_EliminarCBU",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.RequestEliminarCbu"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ResponseEliminarCuenta"
-            }
-          }
-        }
-      }
-    },
-    "/RefreshBusinessConfiguration": {
-      "post": {
-        "tags": [
-          "FuncionesInternas"
-        ],
-        "operationId": "FuncionesInternas_RefreshBusinessConfiguration",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.FuncionesInternas.ResponseRefresh"
-            }
-          }
-        }
-      }
-    },
-    "/api/OnBoarding": {
-      "post": {
-        "tags": [
-          "OnBoarding"
-        ],
-        "operationId": "OnBoarding_Post_OnBoarding",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.RequestOnBoarding"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.ResponseOnBoarding"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaOperacion": {
-      "post": {
-        "tags": [
-          "Operacion"
-        ],
-        "operationId": "Operacion_Post_ConsultaOperacion",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.RequestOperacion"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaPrecio": {
-      "post": {
-        "tags": [
-          "Operacion"
-        ],
-        "operationId": "Operacion_Post_ConsultaPrecio",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.RequestConsultaP"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseConsultaP"
-            }
-          }
-        }
-      }
-    },
-    "/api/Conversor": {
-      "post": {
-        "tags": [
-          "Operacion"
-        ],
-        "operationId": "Operacion_Post_Conversor",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.RequestConversor"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseConversor"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaTasa": {
-      "post": {
-        "tags": [
-          "Operacion"
-        ],
-        "operationId": "Operacion_Post_ConsultaTasa",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.RequestConsultaTasa"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseConsultaTasa"
-            }
-          }
-        }
-      }
-    },
-    "/api/GeneracionOTCconMail": {
-      "post": {
-        "tags": [
-          "Otc"
-        ],
-        "operationId": "Otc_Post_GeneracionOTCconMail",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.RequestOtcConMail"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.ResponseOtc"
-            }
-          }
-        }
-      }
-    },
-    "/api/GeneracionOTCsinMail": {
-      "post": {
-        "tags": [
-          "Otc"
-        ],
-        "operationId": "Otc_Post_GeneracionOTCsinMail",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.RequestOtcSinMail"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.ResponseOtc"
-            }
-          }
-        }
-      }
-    },
-    "/api/ValidacionOTC": {
-      "post": {
-        "tags": [
-          "Otc"
-        ],
-        "operationId": "Otc_Post_ValidacionOTC",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.RequestOtc"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.ResponseOtc"
-            }
-          }
-        }
-      }
-    },
-    "/api/ActivarToken": {
-      "post": {
-        "tags": [
-          "Otc"
-        ],
-        "operationId": "Otc_Post_ActivarToken",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.RequestActivacion"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.ResponseOtcSemilla"
-            }
-          }
-        }
-      }
-    },
-    "/api/ResyncToken": {
-      "post": {
-        "tags": [
-          "Otc"
-        ],
-        "operationId": "Otc_Post_ResyncToken",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.RequestResync"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otc.ResponseOtcSemilla"
-            }
-          }
-        }
-      }
-    },
-    "/api/ValidacionOTP": {
-      "post": {
-        "tags": [
-          "Otp"
-        ],
-        "operationId": "Otp_Post_ValidacionOTP",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otp.RequestOtp"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Otp.ResponseOtp"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaPersona": {
-      "post": {
-        "tags": [
-          "Persona"
-        ],
-        "operationId": "Persona_Post_ConsultaPersona",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Persona.RequestPersona"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Persona.ResponsePersona"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaModPersona": {
-      "get": {
-        "tags": [
-          "Persona"
-        ],
-        "operationId": "Persona_Post_ConsultaModPersona",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Persona.ResponseConsultaPersona"
-            }
-          }
-        }
-      }
-    },
-    "/api/ModificarPersona": {
-      "post": {
-        "tags": [
-          "Persona"
-        ],
-        "operationId": "Persona_Post_ModificarCliente",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Persona.RequestModPersona"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Persona.RequestModPersona"
-            }
-          }
-        }
-      }
-    },
-    "/api/CalculoInteres": {
-      "post": {
-        "tags": [
-          "PlazoFijo"
-        ],
-        "operationId": "PlazoFijo_Post_CalculoInteres",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestCalculoInteres"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseCalculoInteres"
-            }
-          }
-        }
-      }
-    },
-    "/api/GenerarPlazoFijo": {
-      "post": {
-        "tags": [
-          "PlazoFijo"
-        ],
-        "operationId": "PlazoFijo_Post_GenerarPlazoFijo",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestPlazoFijo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponsePlazoFijo"
-            }
-          }
-        }
-      }
-    },
-    "/api/ModificarPlazoFijo": {
-      "post": {
-        "tags": [
-          "PlazoFijo"
-        ],
-        "operationId": "PlazoFijo_Post_ModificarPlazoFijo",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestModificacionPlazoFijo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseModificarPlazoFijo"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaPlazoFijo": {
-      "post": {
-        "tags": [
-          "PlazoFijo"
-        ],
-        "operationId": "PlazoFijo_Post_ConsultarPlazoFijo",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestConsultaPlazoFijo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaPrestamos": {
-      "post": {
-        "tags": [
-          "Prestamos"
-        ],
-        "operationId": "Prestamos_Post_ConsultaPrestamos",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.RequestConsultaPrestamo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.ResponseConsultaPrestamo"
-            }
-          }
-        }
-      }
-    },
-    "/api/ConsultaCuotas": {
-      "post": {
-        "tags": [
-          "Prestamos"
-        ],
-        "operationId": "Prestamos_Post_ConsultaCuotas",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.RequestConsultaCuota"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.ResponseConsultaCuota"
-            }
-          }
-        }
-      }
-    },
-    "/api/GenerarPrestamo": {
-      "post": {
-        "tags": [
-          "Prestamos"
-        ],
-        "operationId": "Prestamos_Post_GenerarPrestamo",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.RequestPrestamo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.ResponsePrestamo"
-            }
-          }
-        }
-      }
-    },
-    "/api/SimularPrestamo": {
-      "post": {
-        "tags": [
-          "Prestamos"
-        ],
-        "operationId": "Prestamos_Post_SimularPrestamo",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.RequestSimulador"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.ResponseSimulador"
-            }
-          }
-        }
-      }
-    },
-    "/api/GenerarTransaccion": {
-      "post": {
-        "tags": [
-          "Trans"
-        ],
-        "operationId": "Trans_Post_GenerarTransaccion",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Tranferencias.RequestTransaccion"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.Tranferencias.ResponseTransaccion"
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "Pines.ApiOma.Core.Agenda.RequestAgenda": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Agenda.ResponseAgenda": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "agenda": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Agenda.DatoAgenda"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.ControllerBase.Respuesta": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "mensaje": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Agenda.DatoAgenda": {
-      "type": "object",
-      "properties": {
-        "cbuBeneficiario": {
-          "type": "string"
-        },
-        "cuitBeneficiario": {
-          "type": "string"
-        },
-        "nombreBeneficiario": {
-          "type": "string"
-        },
-        "banco": {
-          "type": "string"
-        },
-        "referencia": {
-          "type": "string"
-        },
-        "cuentaPropia": {
-          "type": "string"
-        },
-        "mailBeneficiario": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Agenda.RequestAltaBeneficiario": {
-      "type": "object",
-      "properties": {
-        "otp": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "cbuBeneficiario": {
-          "type": "string"
-        },
-        "referencia": {
-          "type": "string"
-        },
-        "cuentaPropia": {
-          "type": "string"
-        },
-        "mailBeneficiario": {
-          "type": "string"
-        },
-        "id_multilenguaje": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Agenda.ResponseAltaBeneficiario": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Agenda.RequestModBeneficiario": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "cbuBeneficiario": {
-          "type": "string"
-        },
-        "referencia": {
-          "type": "string"
-        },
-        "mailBeneficiario": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Agenda.ResponseModBeneficiario": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Agenda.RequestBajaBeneficiario": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "cbuBeneficiario": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestGetUsuario": {
-      "type": "object",
-      "properties": {
-        "password": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.Response.ResponseGetUsuario": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "usuario": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestRecuperarUsuario": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestLogIn": {
-      "type": "object",
-      "properties": {
-        "origen": {
-          "type": "string"
-        },
-        "usuario": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.ResponseToken": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "session": {
-          "type": "string"
-        },
-        "fecha": {
-          "type": "string"
-        },
-        "expires_in": {
-          "format": "int32",
-          "type": "integer"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestLogOut": {
-      "type": "object",
-      "properties": {}
-    },
-    "Pines.ApiOma.Core.Auth.ResponseAuth": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestCambioPassword": {
-      "type": "object",
-      "properties": {
-        "nuevaPassword": {
-          "type": "string"
-        },
-        "usuario": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestCrearCuenta": {
-      "type": "object",
-      "properties": {
-        "cuit": {
-          "type": "string"
-        },
-        "usuario": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestAuth": {
-      "type": "object",
-      "properties": {
-        "usuario": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestValidarPassword": {
-      "type": "object",
-      "properties": {
-        "password": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Auth.RequestValidarUsuario": {
-      "type": "object",
-      "properties": {
-        "usuario": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.CompraVenta.RequestCompraVenta": {
-      "type": "object",
-      "properties": {
-        "otp": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "tipoCuentaOrigen": {
-          "type": "string"
-        },
-        "nroCuentaOrigen": {
-          "type": "string"
-        },
-        "tipoCuentaDestino": {
-          "type": "string"
-        },
-        "nroCuentaDestino": {
-          "type": "string"
-        },
-        "monedaOrigen": {
-          "type": "string"
-        },
-        "especieOrigen": {
-          "type": "string"
-        },
-        "monedaDestino": {
-          "type": "string"
-        },
-        "especieDestino": {
-          "type": "string"
-        },
-        "plazo": {
-          "format": "double",
-          "type": "number"
-        },
-        "tknPrecio": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.CompraVenta.ResponseCompraVenta": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "numeroTransaccion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestSaldo": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "fecha": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseSaldo": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Identificacion"
-        },
-        "cuenta": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.CuentaSaldo"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.Identificacion": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.CuentaSaldo": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "saldoTotal": {
-          "format": "double",
-          "type": "number"
-        },
-        "listaPorEspecie": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.ListaPorEspecie"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ListaPorEspecie": {
-      "type": "object",
-      "properties": {
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Especie"
-        },
-        "saldo": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Saldo"
-        },
-        "acuerdos": {
-          "format": "double",
-          "type": "number"
-        },
-        "bloqueada": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.Especie": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.Saldo": {
-      "type": "object",
-      "properties": {
-        "total": {
-          "format": "double",
-          "type": "number"
-        },
-        "disponible": {
-          "format": "double",
-          "type": "number"
-        },
-        "inmovilizado": {
-          "format": "double",
-          "type": "number"
-        },
-        "proyectado": {
-          "format": "double",
-          "type": "number"
-        },
-        "enPesos": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestCuenta": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseCuenta": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Identificacion"
-        },
-        "cuenta": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Cuenta"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.Cuenta": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "aliasCuenta": {
-          "type": "string"
-        },
-        "cbuCuenta": {
-          "type": "string"
-        },
-        "estado": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestCuentaPorCuenta": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseCuentaPorCuenta": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "cuenta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.CuentaConBloqueo"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.CuentaConBloqueo": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "aliasCuenta": {
-          "type": "string"
-        },
-        "cbuCuenta": {
-          "type": "string"
-        },
-        "estado": {
-          "type": "string"
-        },
-        "motivoBloqueo": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestSaldoPorCuenta": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "fecha": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseSaldoPorCuenta": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacionCuenta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.IdentificacionCuenta"
-        },
-        "datosCuentas": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.DatoCuenta"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.IdentificacionCuenta": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.DatoCuenta": {
-      "type": "object",
-      "properties": {
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Especie"
-        },
-        "saldo": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Saldo"
-        },
-        "acuerdos": {
-          "format": "double",
-          "type": "number"
-        },
-        "bloqueada": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestMovimientoDiferido": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "fechaDesde": {
-          "type": "string"
-        },
-        "fechaHasta": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseMovimientoDiferido": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacionCuenta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.InfoCuenta"
-        },
-        "movimientos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Movimiento"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.InfoCuenta": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.Movimiento": {
-      "type": "object",
-      "properties": {
-        "fecha": {
-          "type": "string"
-        },
-        "fechaIngreso": {
-          "type": "string"
-        },
-        "referencia": {
-          "type": "string"
-        },
-        "detalle": {
-          "type": "string"
-        },
-        "monto": {
-          "format": "double",
-          "type": "number"
-        },
-        "codigoOperacion": {
-          "type": "string"
-        },
-        "nroOperacion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestMovimiento": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "fechaDesde": {
-          "type": "string"
-        },
-        "fechaHasta": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseMovimiento": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacionCuenta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.InfoCuenta"
-        },
-        "movimientos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Movimiento"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestModiAlias": {
-      "type": "object",
-      "properties": {
-        "titular": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.TitularM"
-        },
-        "cuenta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.CuentaM"
-        },
-        "alias": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.AliasM"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.TitularM": {
-      "type": "object",
-      "properties": {
-        "cuit": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.CuentaM": {
-      "type": "object",
-      "properties": {
-        "nro_cbu": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.AliasM": {
-      "type": "object",
-      "properties": {
-        "valor": {
-          "type": "string"
-        },
-        "valor_original": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseModiAlias": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "alias": {
-          "type": "string"
-        },
-        "mensaje": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestCbuAlias": {
-      "type": "object",
-      "properties": {
-        "cbu": {
-          "type": "string"
-        },
-        "alias": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseCbu": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "titulares": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.Titular"
-          }
-        },
-        "cuenta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.CuentaCoelsa"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.Titular": {
-      "type": "object",
-      "properties": {
-        "cuit": {
-          "type": "string"
-        },
-        "nombre": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.CuentaCoelsa": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "banco": {
-          "type": "string"
-        },
-        "nroCbu": {
-          "type": "string"
-        },
-        "alias": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.RequestEliminarCbu": {
-      "type": "object",
-      "properties": {
-        "cbu": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Cuenta.ResponseEliminarCuenta": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.FuncionesInternas.ResponseRefresh": {
-      "type": "object",
-      "properties": {
-        "exito": {
-          "type": "boolean"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.RequestOnBoarding": {
-      "type": "object",
-      "properties": {
-        "persona": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Persona"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Persona": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "cuit": {
-          "type": "string"
-        },
-        "apellido": {
-          "type": "string"
-        },
-        "nombre": {
-          "type": "string"
-        },
-        "domicilio": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Domicilio"
-        },
-        "nacionalidad": {
-          "type": "string"
-        },
-        "fechaNacimiento": {
-          "type": "string"
-        },
-        "estadoCivil": {
-          "type": "string"
-        },
-        "conyuge": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Conyuge"
-        },
-        "empleo": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Empleo"
-        },
-        "categoriaIva": {
-          "type": "string"
-        },
-        "mail": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Mail"
-        },
-        "lugarNacimiento": {
-          "type": "string"
-        },
-        "sexo": {
-          "type": "string"
-        },
-        "tipoPersona": {
-          "type": "string"
-        },
-        "declaracionJurada": {
-          "type": "string"
-        },
-        "pep": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Pep"
-        },
-        "modalidadTrabajo": {
-          "type": "string"
-        },
-        "cuentaNueva": {
-          "type": "string"
-        },
-        "renaper": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Renaper"
-        },
-        "cotitulares": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Cotitular"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Domicilio": {
-      "type": "object",
-      "properties": {
-        "calle": {
-          "type": "string"
-        },
-        "nro": {
-          "type": "string"
-        },
-        "piso": {
-          "type": "string"
-        },
-        "departamento": {
-          "type": "string"
-        },
-        "localidad": {
-          "type": "string"
-        },
-        "codigoPostal": {
-          "type": "string"
-        },
-        "pais": {
-          "type": "string"
-        },
-        "provincia": {
-          "type": "string"
-        },
-        "telefonoParticular": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono"
-        },
-        "celular": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono"
-        },
-        "telefonoLaboral": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono"
-        },
-        "telefonoLaboral2": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Conyuge": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "apellido": {
-          "type": "string"
-        },
-        "nombre": {
-          "type": "string"
-        },
-        "telefono": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Empleo": {
-      "type": "object",
-      "properties": {
-        "ocupacion": {
-          "type": "string"
-        },
-        "ingresos": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Ingreso"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Mail": {
-      "type": "object",
-      "properties": {
-        "mail": {
-          "type": "string"
-        },
-        "mailLaboral": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Pep": {
-      "type": "object",
-      "properties": {
-        "fecha": {
-          "type": "string"
-        },
-        "pep": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Renaper": {
-      "type": "object",
-      "properties": {
-        "domicilio": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.DomicilioRenaper"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Cotitular": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Telefono": {
-      "type": "object",
-      "properties": {
-        "codigoArea": {
-          "type": "string"
-        },
-        "nro": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Ingreso": {
-      "type": "object",
-      "properties": {
-        "periodo": {
-          "type": "string"
-        },
-        "sueldo": {
-          "format": "double",
-          "type": "number"
-        },
-        "sueldoNosis": {
-          "format": "double",
-          "type": "number"
-        },
-        "otrosIngresos": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.DomicilioRenaper": {
-      "type": "object",
-      "properties": {
-        "calle": {
-          "type": "string"
-        },
-        "nro": {
-          "type": "string"
-        },
-        "piso": {
-          "type": "string"
-        },
-        "departamento": {
-          "type": "string"
-        },
-        "localidad": {
-          "type": "string"
-        },
-        "codigoPostal": {
-          "type": "string"
-        },
-        "pais": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.ResponseOnBoarding": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Identificacion"
-        },
-        "cuenta": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.OnBoarding.Cuenta"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Identificacion": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "cuit": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.OnBoarding.Cuenta": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "aliasCuenta": {
-          "type": "string"
-        },
-        "cbuCuenta": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.RequestOperacion": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseOperacion": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_Identificacion"
-        },
-        "operacion": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_Operacion"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseOperacion_Identificacion": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseOperacion_Operacion": {
-      "type": "object",
-      "properties": {
-        "nroCliente": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "operacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_DatosOperacion"
-        },
-        "moneda1": {
-          "type": "string"
-        },
-        "especie1": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion"
-        },
-        "cantidad": {
-          "format": "double",
-          "type": "number"
-        },
-        "precio": {
-          "format": "double",
-          "type": "number"
-        },
-        "plazo": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "tasa": {
-          "format": "double",
-          "type": "number"
-        },
-        "moneda2": {
-          "type": "string"
-        },
-        "especie2": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion"
-        },
-        "monto": {
-          "format": "double",
-          "type": "number"
-        },
-        "concertacion": {
-          "type": "string"
-        },
-        "vencimiento": {
-          "type": "string"
-        },
-        "totalRetenciones": {
-          "format": "float",
-          "type": "number"
-        },
-        "interes": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_Interes"
-        },
-        "productoSOI": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion"
-        },
-        "productoOMA": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseOperacion_DatosOperacion": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseOperacion_Interes": {
-      "type": "object",
-      "properties": {
-        "interesTotal": {
-          "format": "double",
-          "type": "number"
-        },
-        "interesDevengado": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.RequestConsultaP": {
-      "type": "object",
-      "properties": {
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseConsultaP": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "monedaDe": {
-          "type": "string"
-        },
-        "especieDe": {
-          "type": "string"
-        },
-        "monedaA": {
-          "type": "string"
-        },
-        "especieA": {
-          "type": "string"
-        },
-        "valorCompra": {
-          "format": "double",
-          "type": "number"
-        },
-        "valorVenta": {
-          "format": "double",
-          "type": "number"
-        },
-        "impuestoCompra": {
-          "format": "double",
-          "type": "number"
-        },
-        "impuestoVenta": {
-          "format": "double",
-          "type": "number"
-        },
-        "valorCompraConImpuesto": {
-          "format": "double",
-          "type": "number"
-        },
-        "valorVentaConImpuesto": {
-          "format": "double",
-          "type": "number"
-        },
-        "ultimaActualizacion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.RequestConversor": {
-      "type": "object",
-      "properties": {
-        "monedaOrigen": {
-          "type": "string"
-        },
-        "especieOrigen": {
-          "type": "string"
-        },
-        "monedaDestino": {
-          "type": "string"
-        },
-        "especieDestino": {
-          "type": "string"
-        },
-        "monto": {
-          "format": "double",
-          "type": "number"
-        },
-        "especieMonto": {
-          "type": "string"
-        },
-        "tipoCotizacion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseConversor": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "valorCompraUnitario": {
-          "format": "double",
-          "type": "number"
-        },
-        "valorVentaUnitario": {
-          "format": "double",
-          "type": "number"
-        },
-        "impuestoCompra": {
-          "format": "double",
-          "type": "number"
-        },
-        "impuestoVenta": {
-          "format": "double",
-          "type": "number"
-        },
-        "montoPesos": {
-          "format": "double",
-          "type": "number"
-        },
-        "montoImpuesto": {
-          "format": "double",
-          "type": "number"
-        },
-        "montoPesosConImpuesto": {
-          "format": "double",
-          "type": "number"
-        },
-        "montoMonedaExtranjera": {
-          "format": "double",
-          "type": "number"
-        },
-        "ultimaActualizacion": {
-          "type": "string"
-        },
-        "tknPrecio": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.RequestConsultaTasa": {
-      "type": "object",
-      "properties": {
-        "producto": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.ResponseConsultaTasa": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "datosTasas": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Operacion.DatosTasa"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Operacion.DatosTasa": {
-      "type": "object",
-      "properties": {
-        "moneda": {
-          "type": "string"
-        },
-        "plazoDesde": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "plazoHasta": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "tasa": {
-          "format": "double",
-          "type": "number"
-        },
-        "cft": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otc.RequestOtcConMail": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "mail": {
-          "type": "string"
-        },
-        "id_multilenguaje": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otc.ResponseOtc": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otc.RequestOtcSinMail": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "id_multilenguaje": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otc.RequestOtc": {
-      "type": "object",
-      "properties": {
-        "domain": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "otc": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otc.RequestActivacion": {
-      "type": "object",
-      "properties": {
-        "domain": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "tokenActualTimeData": {
-          "type": "string"
-        },
-        "tokenNewSerialNumber": {
-          "type": "string"
-        },
-        "tokenNewSeed": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otc.ResponseOtcSemilla": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "tokenNewSeed": {
-          "type": "string"
-        },
-        "tokenNewSerialNumber": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otc.RequestResync": {
-      "type": "object",
-      "properties": {
-        "domain": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "tokenSerialNumber": {
-          "type": "string"
-        },
-        "tokenSeedHash": {
-          "type": "string"
-        },
-        "tokenActualTimeData": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otp.RequestOtp": {
-      "type": "object",
-      "properties": {
-        "domain": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "otp": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Otp.ResponseOtp": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.RequestPersona": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.ResponsePersona": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Identificacion"
-        },
-        "domicilio": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Domicilio"
-        },
-        "mail": {
-          "type": "string"
-        },
-        "estadoCivil": {
-          "type": "string"
-        },
-        "ocupacion": {
-          "type": "string"
-        },
-        "sexo": {
-          "type": "string"
-        },
-        "tieneUsuarioDigital": {
-          "type": "string"
-        },
-        "clienteBanco": {
-          "type": "string"
-        },
-        "cuentaAVista": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Persona.CuentaAVista"
-          }
-        },
-        "clienteConjunto": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Identificacion": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "cuit_cuil": {
-          "type": "string"
-        },
-        "apellido": {
-          "type": "string"
-        },
-        "nombre": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Domicilio": {
-      "type": "object",
-      "properties": {
-        "calle": {
-          "type": "string"
-        },
-        "nro": {
-          "type": "string"
-        },
-        "piso": {
-          "type": "string"
-        },
-        "departamento": {
-          "type": "string"
-        },
-        "localidad": {
-          "type": "string"
-        },
-        "codigoPostal": {
-          "type": "string"
-        },
-        "provincia": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Provincia"
-        },
-        "pais": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Pais"
-        },
-        "telefono": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Telefono"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.CuentaAVista": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Provincia": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Pais": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Telefono": {
-      "type": "object",
-      "properties": {
-        "codigoArea": {
-          "type": "string"
-        },
-        "nro": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.ResponseConsultaPersona": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "persona": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.DatosPersona"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.DatosPersona": {
-      "type": "object",
-      "properties": {
-        "domicilio": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.ModDomicilio"
-        },
-        "estadoCivil": {
-          "type": "string"
-        },
-        "conyuge": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Conyuge"
-        },
-        "empleo": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Empleo"
-        },
-        "categoriaIva": {
-          "type": "string"
-        },
-        "mail": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Mail"
-        },
-        "declaracionJurada": {
-          "type": "string"
-        },
-        "pep": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Pep"
-        },
-        "modalidadTrabajo": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.ModDomicilio": {
-      "type": "object",
-      "properties": {
-        "calle": {
-          "type": "string"
-        },
-        "nro": {
-          "type": "string"
-        },
-        "piso": {
-          "type": "string"
-        },
-        "departamento": {
-          "type": "string"
-        },
-        "localidad": {
-          "type": "string"
-        },
-        "codigoPostal": {
-          "type": "string"
-        },
-        "pais": {
-          "type": "string"
-        },
-        "provincia": {
-          "type": "string"
-        },
-        "telefonoParticular": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Telefono"
-        },
-        "celular": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Telefono"
-        },
-        "telefonoLaboral": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Telefono"
-        },
-        "telefonoLaboral2": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Telefono"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Conyuge": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "apellido": {
-          "type": "string"
-        },
-        "nombre": {
-          "type": "string"
-        },
-        "telefono": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Telefono"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Empleo": {
-      "type": "object",
-      "properties": {
-        "ocupacion": {
-          "type": "string"
-        },
-        "ingresos": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.Ingreso"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Mail": {
-      "type": "object",
-      "properties": {
-        "mail": {
-          "type": "string"
-        },
-        "mailLaboral": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Pep": {
-      "type": "object",
-      "properties": {
-        "fecha": {
-          "type": "string"
-        },
-        "pep": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.Ingreso": {
-      "type": "object",
-      "properties": {
-        "periodo": {
-          "type": "string"
-        },
-        "sueldo": {
-          "format": "double",
-          "type": "number"
-        },
-        "otrosIngresos": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Persona.RequestModPersona": {
-      "type": "object",
-      "properties": {
-        "otp": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "persona": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.Persona.DatosPersona"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.RequestCalculoInteres": {
-      "type": "object",
-      "properties": {
-        "moneda": {
-          "type": "string"
-        },
-        "plazo": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "monto": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseCalculoInteres": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "tasa": {
-          "format": "double",
-          "type": "number"
-        },
-        "plazo": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "interes": {
-          "format": "double",
-          "type": "number"
-        },
-        "token": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.RequestPlazoFijo": {
-      "type": "object",
-      "properties": {
-        "otp": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "acreditaAutom": {
-          "type": "string"
-        },
-        "renueva": {
-          "type": "string"
-        },
-        "token": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponsePlazoFijo": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "numeroTransaccion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.RequestModificacionPlazoFijo": {
-      "type": "object",
-      "properties": {
-        "nroMinuta": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "empresa": {
-          "type": "string"
-        },
-        "acreditaAtomaticamente": {
-          "type": "string"
-        },
-        "renuevaCapital": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseModificarPlazoFijo": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.RequestConsultaPlazoFijo": {
-      "type": "object",
-      "properties": {
-        "tipoDoc": {
-          "type": "string"
-        },
-        "nroDoc": {
-          "type": "string"
-        },
-        "activos": {
-          "type": "string"
-        },
-        "fechaDesde": {
-          "type": "string"
-        },
-        "fechaHasta": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "identificacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Identificacion"
-        },
-        "operacion": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Operacion"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Identificacion": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Operacion": {
-      "type": "object",
-      "properties": {
-        "operacion": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_DatosOperacion"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_CodigoDescripcion"
-        },
-        "capital": {
-          "format": "double",
-          "type": "number"
-        },
-        "plazo": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "tasa": {
-          "format": "double",
-          "type": "number"
-        },
-        "importeTotal": {
-          "format": "double",
-          "type": "number"
-        },
-        "fechaContabilizacion": {
-          "type": "string"
-        },
-        "fechaVencimiento": {
-          "type": "string"
-        },
-        "interes": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Interes"
-        },
-        "acredita": {
-          "type": "string"
-        },
-        "renueva": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_DatosOperacion": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "empresa": {
-          "type": "string"
-        },
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        },
-        "nroComprobante": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_CodigoDescripcion": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Interes": {
-      "type": "object",
-      "properties": {
-        "interesTotal": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.RequestConsultaPrestamo": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "activos": {
-          "type": "string"
-        },
-        "fechaDesde": {
-          "type": "string"
-        },
-        "fechaHasta": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.ResponseConsultaPrestamo": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "datosPrestamos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.DatosPrestamo"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.DatosPrestamo": {
-      "type": "object",
-      "properties": {
-        "codCliente": {
-          "type": "string"
-        },
-        "nombreCliente": {
-          "type": "string"
-        },
-        "nroOperacion": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "nroPrestamo": {
-          "type": "string"
-        },
-        "empresa": {
-          "type": "string"
-        },
-        "codigoOperacion": {
-          "type": "string"
-        },
-        "descripcion": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "capitalTotal": {
-          "format": "double",
-          "type": "number"
-        },
-        "tasa": {
-          "format": "double",
-          "type": "number"
-        },
-        "plazo": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "fechaContable": {
-          "type": "string"
-        },
-        "fechaVencimiento": {
-          "type": "string"
-        },
-        "importeTotal": {
-          "format": "double",
-          "type": "number"
-        },
-        "importeRestante": {
-          "format": "double",
-          "type": "number"
-        },
-        "totalRetenciones": {
-          "format": "double",
-          "type": "number"
-        },
-        "cuotasRestante": {
-          "type": "string"
-        },
-        "cuotas": {
-          "type": "string"
-        },
-        "estado": {
-          "type": "string"
-        },
-        "interes": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.RequestConsultaCuota": {
-      "type": "object",
-      "properties": {
-        "codEmpresa": {
-          "type": "string"
-        },
-        "nroPrestamo": {
-          "type": "string"
-        },
-        "nroCuota": {
-          "type": "string"
-        },
-        "estado": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.ResponseConsultaCuota": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "datosCuotas": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.DatosCuota"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.DatosCuota": {
-      "type": "object",
-      "properties": {
-        "nroOperacion": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "cuota": {
-          "type": "string"
-        },
-        "capital": {
-          "format": "double",
-          "type": "number"
-        },
-        "interes": {
-          "format": "double",
-          "type": "number"
-        },
-        "montoTotal": {
-          "format": "double",
-          "type": "number"
-        },
-        "fechaVencimiento": {
-          "type": "string"
-        },
-        "estadoCuota": {
-          "type": "string"
-        },
-        "iva": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.RequestPrestamo": {
-      "type": "object",
-      "properties": {
-        "otp": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "capital": {
-          "format": "double",
-          "type": "number"
-        },
-        "tasa": {
-          "format": "double",
-          "type": "number"
-        },
-        "cantidadCuotas": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "tipoPrestamo": {
-          "type": "string"
-        },
-        "score": {
-          "format": "double",
-          "type": "number"
-        },
-        "aprobado": {
-          "type": "string"
-        },
-        "clasificacionIngreso": {
-          "type": "string"
-        },
-        "destinoFondos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.DestinoFondo"
-          }
-        },
-        "aplicacionGeografica": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.AplicacionGeografica"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.DestinoFondo": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "importe": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.AplicacionGeografica": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "string"
-        },
-        "importe": {
-          "format": "double",
-          "type": "number"
-        },
-        "codPostal": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.ResponsePrestamo": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "numeroTransaccion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.RequestSimulador": {
-      "type": "object",
-      "properties": {
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "capital": {
-          "format": "double",
-          "type": "number"
-        },
-        "tasa": {
-          "format": "double",
-          "type": "number"
-        },
-        "cantidadCuotas": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "tipoPrestamo": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Prestamos.ResponseSimulador": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "detalleCuotas": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.DatosCuota"
-          }
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Tranferencias.RequestTransaccion": {
-      "type": "object",
-      "properties": {
-        "otp": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "domain": {
-          "type": "string"
-        },
-        "tipoCuenta": {
-          "type": "string"
-        },
-        "nroCuenta": {
-          "type": "string"
-        },
-        "moneda": {
-          "type": "string"
-        },
-        "especie": {
-          "type": "string"
-        },
-        "fechaTransferencias": {
-          "type": "string"
-        },
-        "transferenciaDiferida": {
-          "type": "string"
-        },
-        "cbuDestino": {
-          "type": "string"
-        },
-        "codigoMotivo": {
-          "type": "string"
-        },
-        "montoTransferencia": {
-          "format": "double",
-          "type": "number"
-        },
-        "enviaMail": {
-          "type": "string"
-        },
-        "textoEmail": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.Tranferencias.ResponseTransaccion": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "numeroTransaccion": {
-          "type": "string"
-        }
-      }
-    }
-  }
-}
+swagger: '2.0'
+info:
+  version: v1
+  title: Pines.ApiOma
+host: 'api.totalneo.com:4010'
+schemes:
+  - http
+  - https
+paths:
+  /api/ConsultaAgenda:
+    post:
+      tags:
+        - Agenda
+      operationId: Agenda_Post_ConsultaAgenda
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.RequestAgenda'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseAgenda'
+  /api/AltaBeneficiario:
+    post:
+      tags:
+        - Agenda
+      operationId: Agenda_Post_AltaBeneficiario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.RequestAltaBeneficiario'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseAltaBeneficiario'
+  /api/ModificarBeneficiario:
+    post:
+      tags:
+        - Agenda
+      operationId: Agenda_Post_ModficarBeneficiario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.RequestModBeneficiario'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseModBeneficiario'
+  /api/EliminarBeneficiario:
+    post:
+      tags:
+        - Agenda
+      operationId: Agenda_Post_EliminarBeneficiario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.RequestBajaBeneficiario'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseModBeneficiario'
+  /api/GetUsuario:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Get_Usuario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestGetUsuario'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.Response.ResponseGetUsuario'
+  /api/RecuperarUsuario:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Get_RecuperarUsuario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestRecuperarUsuario'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.Response.ResponseGetUsuario'
+  /api/LogIn:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_LogIn
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestLogIn'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseToken'
+  /api/LogOut:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_LogOut
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestLogOut'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth'
+  /api/CambioPassword:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_CambioPassword
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestCambioPassword'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth'
+  /api/CrearUsuario:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_CrearUsuario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestCrearCuenta'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth'
+  /api/BloquearUsuario:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_BloquearUsuario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestAuth'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth'
+  /api/RefreshTokenSession:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_RefreshTokenSession
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestLogOut'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseToken'
+  /api/ForzarCambioPassword:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_ForzarCambioPassword
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestAuth'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth'
+  /api/ValidarPassword:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_ValidarPassword
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestValidarPassword'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth'
+  /api/ValidarUsuario:
+    post:
+      tags:
+        - Auth
+      operationId: Auth_Post_ValidarUsuario
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.RequestValidarUsuario'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Auth.ResponseAuth'
+  /api/GenerarCompraVenta:
+    post:
+      tags:
+        - CompraVenta
+      operationId: CompraVenta_Post_GenerarCompraVenta
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.CompraVenta.RequestCompraVenta'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.CompraVenta.ResponseCompraVenta'
+  /api/ConsultaSaldo:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ConsultaSaldo
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestSaldo'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseSaldo'
+  /api/ConsultaCuenta:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ConsultaCuenta
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestCuenta'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCuenta'
+  /api/ConsultaCuentaPorCuenta:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ConsultaCuentaPorCuenta
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestCuentaPorCuenta'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCuentaPorCuenta'
+  /api/ConsultaSaldoPorCuenta:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ConsultaSaldoPorCuenta
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestSaldoPorCuenta'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseSaldoPorCuenta'
+  /api/ConsultaMovimientosDiferidos:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ConsultaMovimientosDiferidos
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestMovimientoDiferido'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseMovimientoDiferido'
+  /api/ConsultaMovimientos:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ConsultaMovimientos
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestMovimiento'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseMovimiento'
+  /api/ModificarAlias:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ModificarAlias
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestModiAlias'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseModiAlias'
+  /api/ConsultaCbuAlias:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_ConsultaCbuAlias
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestCbuAlias'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCbu'
+  /api/EliminarCBU:
+    post:
+      tags:
+        - Cuenta
+      operationId: Cuenta_Post_EliminarCBU
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.RequestEliminarCbu'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseEliminarCuenta'
+  /RefreshBusinessConfiguration:
+    post:
+      tags:
+        - FuncionesInternas
+      operationId: FuncionesInternas_RefreshBusinessConfiguration
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.FuncionesInternas.ResponseRefresh'
+  /api/OnBoarding:
+    post:
+      tags:
+        - OnBoarding
+      operationId: OnBoarding_Post_OnBoarding
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.RequestOnBoarding'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.ResponseOnBoarding'
+  /api/ConsultaOperacion:
+    post:
+      tags:
+        - Operacion
+      operationId: Operacion_Post_ConsultaOperacion
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.RequestOperacion'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion'
+  /api/ConsultaPrecio:
+    post:
+      tags:
+        - Operacion
+      operationId: Operacion_Post_ConsultaPrecio
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.RequestConsultaP'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseConsultaP'
+  /api/Conversor:
+    post:
+      tags:
+        - Operacion
+      operationId: Operacion_Post_Conversor
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.RequestConversor'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseConversor'
+  /api/ConsultaTasa:
+    post:
+      tags:
+        - Operacion
+      operationId: Operacion_Post_ConsultaTasa
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.RequestConsultaTasa'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseConsultaTasa'
+  /api/GeneracionOTCconMail:
+    post:
+      tags:
+        - Otc
+      operationId: Otc_Post_GeneracionOTCconMail
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.RequestOtcConMail'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.ResponseOtc'
+  /api/GeneracionOTCsinMail:
+    post:
+      tags:
+        - Otc
+      operationId: Otc_Post_GeneracionOTCsinMail
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.RequestOtcSinMail'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.ResponseOtc'
+  /api/ValidacionOTC:
+    post:
+      tags:
+        - Otc
+      operationId: Otc_Post_ValidacionOTC
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.RequestOtc'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.ResponseOtc'
+  /api/ActivarToken:
+    post:
+      tags:
+        - Otc
+      operationId: Otc_Post_ActivarToken
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.RequestActivacion'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.ResponseOtcSemilla'
+  /api/ResyncToken:
+    post:
+      tags:
+        - Otc
+      operationId: Otc_Post_ResyncToken
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.RequestResync'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otc.ResponseOtcSemilla'
+  /api/ValidacionOTP:
+    post:
+      tags:
+        - Otp
+      operationId: Otp_Post_ValidacionOTP
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otp.RequestOtp'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Otp.ResponseOtp'
+  /api/ConsultaPersona:
+    post:
+      tags:
+        - Persona
+      operationId: Persona_Post_ConsultaPersona
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Persona.RequestPersona'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Persona.ResponsePersona'
+  /api/ConsultaModPersona:
+    get:
+      tags:
+        - Persona
+      operationId: Persona_Post_ConsultaModPersona
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Persona.ResponseConsultaPersona'
+  /api/ModificarPersona:
+    post:
+      tags:
+        - Persona
+      operationId: Persona_Post_ModificarCliente
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Persona.RequestModPersona'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Persona.RequestModPersona'
+  /api/CalculoInteres:
+    post:
+      tags:
+        - PlazoFijo
+      operationId: PlazoFijo_Post_CalculoInteres
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestCalculoInteres'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseCalculoInteres'
+  /api/GenerarPlazoFijo:
+    post:
+      tags:
+        - PlazoFijo
+      operationId: PlazoFijo_Post_GenerarPlazoFijo
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestPlazoFijo'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponsePlazoFijo'
+  /api/ModificarPlazoFijo:
+    post:
+      tags:
+        - PlazoFijo
+      operationId: PlazoFijo_Post_ModificarPlazoFijo
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestModificacionPlazoFijo'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseModificarPlazoFijo'
+  /api/ConsultaPlazoFijo:
+    post:
+      tags:
+        - PlazoFijo
+      operationId: PlazoFijo_Post_ConsultarPlazoFijo
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.RequestConsultaPlazoFijo'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo'
+  /api/ConsultaPrestamos:
+    post:
+      tags:
+        - Prestamos
+      operationId: Prestamos_Post_ConsultaPrestamos
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.RequestConsultaPrestamo'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.ResponseConsultaPrestamo'
+  /api/ConsultaCuotas:
+    post:
+      tags:
+        - Prestamos
+      operationId: Prestamos_Post_ConsultaCuotas
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.RequestConsultaCuota'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.ResponseConsultaCuota'
+  /api/GenerarPrestamo:
+    post:
+      tags:
+        - Prestamos
+      operationId: Prestamos_Post_GenerarPrestamo
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.RequestPrestamo'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.ResponsePrestamo'
+  /api/SimularPrestamo:
+    post:
+      tags:
+        - Prestamos
+      operationId: Prestamos_Post_SimularPrestamo
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.RequestSimulador'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.ResponseSimulador'
+  /api/GenerarTransaccion:
+    post:
+      tags:
+        - Trans
+      operationId: Trans_Post_GenerarTransaccion
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Tranferencias.RequestTransaccion'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Pines.ApiOma.Core.Tranferencias.ResponseTransaccion'
+definitions:
+  Pines.ApiOma.Core.Agenda.RequestAgenda:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Agenda.ResponseAgenda:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      agenda:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Agenda.DatoAgenda'
+  Pines.ApiOma.Core.ControllerBase.Respuesta:
+    type: object
+    properties:
+      id:
+        type: string
+      mensaje:
+        type: string
+  Pines.ApiOma.Core.Agenda.DatoAgenda:
+    type: object
+    properties:
+      cbuBeneficiario:
+        type: string
+      cuitBeneficiario:
+        type: string
+      nombreBeneficiario:
+        type: string
+      banco:
+        type: string
+      referencia:
+        type: string
+      cuentaPropia:
+        type: string
+      mailBeneficiario:
+        type: string
+  Pines.ApiOma.Core.Agenda.RequestAltaBeneficiario:
+    type: object
+    properties:
+      otp:
+        type: string
+      user:
+        type: string
+      domain:
+        type: string
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      cbuBeneficiario:
+        type: string
+      referencia:
+        type: string
+      cuentaPropia:
+        type: string
+      mailBeneficiario:
+        type: string
+      id_multilenguaje:
+        type: string
+  Pines.ApiOma.Core.Agenda.ResponseAltaBeneficiario:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+  Pines.ApiOma.Core.Agenda.RequestModBeneficiario:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      cbuBeneficiario:
+        type: string
+      referencia:
+        type: string
+      mailBeneficiario:
+        type: string
+  Pines.ApiOma.Core.Agenda.ResponseModBeneficiario:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+  Pines.ApiOma.Core.Agenda.RequestBajaBeneficiario:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      cbuBeneficiario:
+        type: string
+  Pines.ApiOma.Core.Auth.RequestGetUsuario:
+    type: object
+    properties:
+      password:
+        type: string
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Auth.Response.ResponseGetUsuario:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      usuario:
+        type: string
+  Pines.ApiOma.Core.Auth.RequestRecuperarUsuario:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Auth.RequestLogIn:
+    type: object
+    properties:
+      origen:
+        type: string
+      usuario:
+        type: string
+      password:
+        type: string
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Auth.ResponseToken:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      session:
+        type: string
+      fecha:
+        type: string
+      expires_in:
+        format: int32
+        type: integer
+  Pines.ApiOma.Core.Auth.RequestLogOut:
+    type: object
+    properties: {}
+  Pines.ApiOma.Core.Auth.ResponseAuth:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+  Pines.ApiOma.Core.Auth.RequestCambioPassword:
+    type: object
+    properties:
+      nuevaPassword:
+        type: string
+      usuario:
+        type: string
+      password:
+        type: string
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Auth.RequestCrearCuenta:
+    type: object
+    properties:
+      cuit:
+        type: string
+      usuario:
+        type: string
+      password:
+        type: string
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Auth.RequestAuth:
+    type: object
+    properties:
+      usuario:
+        type: string
+      password:
+        type: string
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Auth.RequestValidarPassword:
+    type: object
+    properties:
+      password:
+        type: string
+  Pines.ApiOma.Core.Auth.RequestValidarUsuario:
+    type: object
+    properties:
+      usuario:
+        type: string
+  Pines.ApiOma.Core.CompraVenta.RequestCompraVenta:
+    type: object
+    properties:
+      otp:
+        type: string
+      user:
+        type: string
+      domain:
+        type: string
+      tipoCuentaOrigen:
+        type: string
+      nroCuentaOrigen:
+        type: string
+      tipoCuentaDestino:
+        type: string
+      nroCuentaDestino:
+        type: string
+      monedaOrigen:
+        type: string
+      especieOrigen:
+        type: string
+      monedaDestino:
+        type: string
+      especieDestino:
+        type: string
+      plazo:
+        format: double
+        type: number
+      tknPrecio:
+        type: string
+  Pines.ApiOma.Core.CompraVenta.ResponseCompraVenta:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      numeroTransaccion:
+        type: string
+  Pines.ApiOma.Core.Cuenta.RequestSaldo:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      fecha:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseSaldo:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Identificacion'
+      cuenta:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.CuentaSaldo'
+  Pines.ApiOma.Core.Cuenta.Identificacion:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Cuenta.CuentaSaldo:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      descripcion:
+        type: string
+      nroCuenta:
+        type: string
+      saldoTotal:
+        format: double
+        type: number
+      listaPorEspecie:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ListaPorEspecie'
+  Pines.ApiOma.Core.Cuenta.ListaPorEspecie:
+    type: object
+    properties:
+      moneda:
+        type: string
+      especie:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Especie'
+      saldo:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Saldo'
+      acuerdos:
+        format: double
+        type: number
+      bloqueada:
+        type: string
+  Pines.ApiOma.Core.Cuenta.Especie:
+    type: object
+    properties:
+      codigo:
+        type: string
+      descripcion:
+        type: string
+  Pines.ApiOma.Core.Cuenta.Saldo:
+    type: object
+    properties:
+      total:
+        format: double
+        type: number
+      disponible:
+        format: double
+        type: number
+      inmovilizado:
+        format: double
+        type: number
+      proyectado:
+        format: double
+        type: number
+      enPesos:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Cuenta.RequestCuenta:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseCuenta:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Identificacion'
+      cuenta:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Cuenta'
+  Pines.ApiOma.Core.Cuenta.Cuenta:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      descripcion:
+        type: string
+      nroCuenta:
+        type: string
+      aliasCuenta:
+        type: string
+      cbuCuenta:
+        type: string
+      estado:
+        type: string
+  Pines.ApiOma.Core.Cuenta.RequestCuentaPorCuenta:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseCuentaPorCuenta:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      cuenta:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.CuentaConBloqueo'
+  Pines.ApiOma.Core.Cuenta.CuentaConBloqueo:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      descripcion:
+        type: string
+      nroCuenta:
+        type: string
+      aliasCuenta:
+        type: string
+      cbuCuenta:
+        type: string
+      estado:
+        type: string
+      motivoBloqueo:
+        type: string
+  Pines.ApiOma.Core.Cuenta.RequestSaldoPorCuenta:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      moneda:
+        type: string
+      especie:
+        type: string
+      fecha:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseSaldoPorCuenta:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacionCuenta:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.IdentificacionCuenta'
+      datosCuentas:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.DatoCuenta'
+  Pines.ApiOma.Core.Cuenta.IdentificacionCuenta:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      descripcion:
+        type: string
+      nroCuenta:
+        type: string
+  Pines.ApiOma.Core.Cuenta.DatoCuenta:
+    type: object
+    properties:
+      moneda:
+        type: string
+      especie:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Especie'
+      saldo:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Saldo'
+      acuerdos:
+        format: double
+        type: number
+      bloqueada:
+        type: string
+  Pines.ApiOma.Core.Cuenta.RequestMovimientoDiferido:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      moneda:
+        type: string
+      especie:
+        type: string
+      fechaDesde:
+        type: string
+      fechaHasta:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseMovimientoDiferido:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacionCuenta:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.InfoCuenta'
+      movimientos:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Movimiento'
+  Pines.ApiOma.Core.Cuenta.InfoCuenta:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      moneda:
+        type: string
+      especie:
+        type: string
+  Pines.ApiOma.Core.Cuenta.Movimiento:
+    type: object
+    properties:
+      fecha:
+        type: string
+      fechaIngreso:
+        type: string
+      referencia:
+        type: string
+      detalle:
+        type: string
+      monto:
+        format: double
+        type: number
+      codigoOperacion:
+        type: string
+      nroOperacion:
+        type: string
+  Pines.ApiOma.Core.Cuenta.RequestMovimiento:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      moneda:
+        type: string
+      especie:
+        type: string
+      fechaDesde:
+        type: string
+      fechaHasta:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseMovimiento:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacionCuenta:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.InfoCuenta'
+      movimientos:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Movimiento'
+  Pines.ApiOma.Core.Cuenta.RequestModiAlias:
+    type: object
+    properties:
+      titular:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.TitularM'
+      cuenta:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.CuentaM'
+      alias:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.AliasM'
+  Pines.ApiOma.Core.Cuenta.TitularM:
+    type: object
+    properties:
+      cuit:
+        type: string
+  Pines.ApiOma.Core.Cuenta.CuentaM:
+    type: object
+    properties:
+      nro_cbu:
+        type: string
+  Pines.ApiOma.Core.Cuenta.AliasM:
+    type: object
+    properties:
+      valor:
+        type: string
+      valor_original:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseModiAlias:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      alias:
+        type: string
+      mensaje:
+        type: string
+  Pines.ApiOma.Core.Cuenta.RequestCbuAlias:
+    type: object
+    properties:
+      cbu:
+        type: string
+      alias:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseCbu:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      titulares:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.Titular'
+      cuenta:
+        $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.CuentaCoelsa'
+  Pines.ApiOma.Core.Cuenta.Titular:
+    type: object
+    properties:
+      cuit:
+        type: string
+      nombre:
+        type: string
+  Pines.ApiOma.Core.Cuenta.CuentaCoelsa:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      banco:
+        type: string
+      nroCbu:
+        type: string
+      alias:
+        type: string
+  Pines.ApiOma.Core.Cuenta.RequestEliminarCbu:
+    type: object
+    properties:
+      cbu:
+        type: string
+  Pines.ApiOma.Core.Cuenta.ResponseEliminarCuenta:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+  Pines.ApiOma.Core.FuncionesInternas.ResponseRefresh:
+    type: object
+    properties:
+      exito:
+        type: boolean
+  Pines.ApiOma.Core.OnBoarding.RequestOnBoarding:
+    type: object
+    properties:
+      persona:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Persona'
+  Pines.ApiOma.Core.OnBoarding.Persona:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      cuit:
+        type: string
+      apellido:
+        type: string
+      nombre:
+        type: string
+      domicilio:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Domicilio'
+      nacionalidad:
+        type: string
+      fechaNacimiento:
+        type: string
+      estadoCivil:
+        type: string
+      conyuge:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Conyuge'
+      empleo:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Empleo'
+      categoriaIva:
+        type: string
+      mail:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Mail'
+      lugarNacimiento:
+        type: string
+      sexo:
+        type: string
+      tipoPersona:
+        type: string
+      declaracionJurada:
+        type: string
+      pep:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Pep'
+      modalidadTrabajo:
+        type: string
+      cuentaNueva:
+        type: string
+      renaper:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Renaper'
+      cotitulares:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Cotitular'
+  Pines.ApiOma.Core.OnBoarding.Domicilio:
+    type: object
+    properties:
+      calle:
+        type: string
+      nro:
+        type: string
+      piso:
+        type: string
+      departamento:
+        type: string
+      localidad:
+        type: string
+      codigoPostal:
+        type: string
+      pais:
+        type: string
+      provincia:
+        type: string
+      telefonoParticular:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono'
+      celular:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono'
+      telefonoLaboral:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono'
+      telefonoLaboral2:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono'
+  Pines.ApiOma.Core.OnBoarding.Conyuge:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      apellido:
+        type: string
+      nombre:
+        type: string
+      telefono:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Telefono'
+  Pines.ApiOma.Core.OnBoarding.Empleo:
+    type: object
+    properties:
+      ocupacion:
+        type: string
+      ingresos:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Ingreso'
+  Pines.ApiOma.Core.OnBoarding.Mail:
+    type: object
+    properties:
+      mail:
+        type: string
+      mailLaboral:
+        type: string
+  Pines.ApiOma.Core.OnBoarding.Pep:
+    type: object
+    properties:
+      fecha:
+        type: string
+      pep:
+        type: string
+  Pines.ApiOma.Core.OnBoarding.Renaper:
+    type: object
+    properties:
+      domicilio:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.DomicilioRenaper'
+  Pines.ApiOma.Core.OnBoarding.Cotitular:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.OnBoarding.Telefono:
+    type: object
+    properties:
+      codigoArea:
+        type: string
+      nro:
+        type: string
+  Pines.ApiOma.Core.OnBoarding.Ingreso:
+    type: object
+    properties:
+      periodo:
+        type: string
+      sueldo:
+        format: double
+        type: number
+      sueldoNosis:
+        format: double
+        type: number
+      otrosIngresos:
+        format: double
+        type: number
+  Pines.ApiOma.Core.OnBoarding.DomicilioRenaper:
+    type: object
+    properties:
+      calle:
+        type: string
+      nro:
+        type: string
+      piso:
+        type: string
+      departamento:
+        type: string
+      localidad:
+        type: string
+      codigoPostal:
+        type: string
+      pais:
+        type: string
+  Pines.ApiOma.Core.OnBoarding.ResponseOnBoarding:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Identificacion'
+      cuenta:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.Cuenta'
+  Pines.ApiOma.Core.OnBoarding.Identificacion:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      cuit:
+        type: string
+  Pines.ApiOma.Core.OnBoarding.Cuenta:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      aliasCuenta:
+        type: string
+      cbuCuenta:
+        type: string
+  Pines.ApiOma.Core.Operacion.RequestOperacion:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Operacion.ResponseOperacion:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_Identificacion'
+      operacion:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_Operacion'
+  Pines.ApiOma.Core.Operacion.ResponseOperacion_Identificacion:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Operacion.ResponseOperacion_Operacion:
+    type: object
+    properties:
+      nroCliente:
+        format: int32
+        type: integer
+      operacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_DatosOperacion'
+      moneda1:
+        type: string
+      especie1:
+        $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion'
+      cantidad:
+        format: double
+        type: number
+      precio:
+        format: double
+        type: number
+      plazo:
+        format: int32
+        type: integer
+      tasa:
+        format: double
+        type: number
+      moneda2:
+        type: string
+      especie2:
+        $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion'
+      monto:
+        format: double
+        type: number
+      concertacion:
+        type: string
+      vencimiento:
+        type: string
+      totalRetenciones:
+        format: float
+        type: number
+      interes:
+        $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_Interes'
+      productoSOI:
+        $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion'
+      productoOMA:
+        $ref: '#/definitions/Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion'
+  Pines.ApiOma.Core.Operacion.ResponseOperacion_DatosOperacion:
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      codigo:
+        type: string
+      descripcion:
+        type: string
+  Pines.ApiOma.Core.Operacion.ResponseOperacion_CodigoDescripcion:
+    type: object
+    properties:
+      codigo:
+        type: string
+      descripcion:
+        type: string
+  Pines.ApiOma.Core.Operacion.ResponseOperacion_Interes:
+    type: object
+    properties:
+      interesTotal:
+        format: double
+        type: number
+      interesDevengado:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Operacion.RequestConsultaP:
+    type: object
+    properties:
+      moneda:
+        type: string
+      especie:
+        type: string
+  Pines.ApiOma.Core.Operacion.ResponseConsultaP:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      monedaDe:
+        type: string
+      especieDe:
+        type: string
+      monedaA:
+        type: string
+      especieA:
+        type: string
+      valorCompra:
+        format: double
+        type: number
+      valorVenta:
+        format: double
+        type: number
+      impuestoCompra:
+        format: double
+        type: number
+      impuestoVenta:
+        format: double
+        type: number
+      valorCompraConImpuesto:
+        format: double
+        type: number
+      valorVentaConImpuesto:
+        format: double
+        type: number
+      ultimaActualizacion:
+        type: string
+  Pines.ApiOma.Core.Operacion.RequestConversor:
+    type: object
+    properties:
+      monedaOrigen:
+        type: string
+      especieOrigen:
+        type: string
+      monedaDestino:
+        type: string
+      especieDestino:
+        type: string
+      monto:
+        format: double
+        type: number
+      especieMonto:
+        type: string
+      tipoCotizacion:
+        type: string
+  Pines.ApiOma.Core.Operacion.ResponseConversor:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      valorCompraUnitario:
+        format: double
+        type: number
+      valorVentaUnitario:
+        format: double
+        type: number
+      impuestoCompra:
+        format: double
+        type: number
+      impuestoVenta:
+        format: double
+        type: number
+      montoPesos:
+        format: double
+        type: number
+      montoImpuesto:
+        format: double
+        type: number
+      montoPesosConImpuesto:
+        format: double
+        type: number
+      montoMonedaExtranjera:
+        format: double
+        type: number
+      ultimaActualizacion:
+        type: string
+      tknPrecio:
+        type: string
+  Pines.ApiOma.Core.Operacion.RequestConsultaTasa:
+    type: object
+    properties:
+      producto:
+        type: string
+  Pines.ApiOma.Core.Operacion.ResponseConsultaTasa:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      datosTasas:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Operacion.DatosTasa'
+  Pines.ApiOma.Core.Operacion.DatosTasa:
+    type: object
+    properties:
+      moneda:
+        type: string
+      plazoDesde:
+        format: int32
+        type: integer
+      plazoHasta:
+        format: int32
+        type: integer
+      tasa:
+        format: double
+        type: number
+      cft:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Otc.RequestOtcConMail:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      mail:
+        type: string
+      id_multilenguaje:
+        type: string
+      domain:
+        type: string
+      user:
+        type: string
+  Pines.ApiOma.Core.Otc.ResponseOtc:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+  Pines.ApiOma.Core.Otc.RequestOtcSinMail:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      id_multilenguaje:
+        type: string
+      domain:
+        type: string
+      user:
+        type: string
+  Pines.ApiOma.Core.Otc.RequestOtc:
+    type: object
+    properties:
+      domain:
+        type: string
+      user:
+        type: string
+      otc:
+        type: string
+  Pines.ApiOma.Core.Otc.RequestActivacion:
+    type: object
+    properties:
+      domain:
+        type: string
+      user:
+        type: string
+      tokenActualTimeData:
+        type: string
+      tokenNewSerialNumber:
+        type: string
+      tokenNewSeed:
+        type: string
+  Pines.ApiOma.Core.Otc.ResponseOtcSemilla:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      tokenNewSeed:
+        type: string
+      tokenNewSerialNumber:
+        type: string
+  Pines.ApiOma.Core.Otc.RequestResync:
+    type: object
+    properties:
+      domain:
+        type: string
+      user:
+        type: string
+      tokenSerialNumber:
+        type: string
+      tokenSeedHash:
+        type: string
+      tokenActualTimeData:
+        type: string
+  Pines.ApiOma.Core.Otp.RequestOtp:
+    type: object
+    properties:
+      domain:
+        type: string
+      user:
+        type: string
+      otp:
+        type: string
+  Pines.ApiOma.Core.Otp.ResponseOtp:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+  Pines.ApiOma.Core.Persona.RequestPersona:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.Persona.ResponsePersona:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Identificacion'
+      domicilio:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Domicilio'
+      mail:
+        type: string
+      estadoCivil:
+        type: string
+      ocupacion:
+        type: string
+      sexo:
+        type: string
+      tieneUsuarioDigital:
+        type: string
+      clienteBanco:
+        type: string
+      cuentaAVista:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Persona.CuentaAVista'
+      clienteConjunto:
+        type: string
+  Pines.ApiOma.Core.Persona.Identificacion:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      cuit_cuil:
+        type: string
+      apellido:
+        type: string
+      nombre:
+        type: string
+  Pines.ApiOma.Core.Persona.Domicilio:
+    type: object
+    properties:
+      calle:
+        type: string
+      nro:
+        type: string
+      piso:
+        type: string
+      departamento:
+        type: string
+      localidad:
+        type: string
+      codigoPostal:
+        type: string
+      provincia:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Provincia'
+      pais:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Pais'
+      telefono:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Telefono'
+  Pines.ApiOma.Core.Persona.CuentaAVista:
+    type: object
+    properties:
+      codigo:
+        type: string
+      descripcion:
+        type: string
+  Pines.ApiOma.Core.Persona.Provincia:
+    type: object
+    properties:
+      codigo:
+        type: string
+      descripcion:
+        type: string
+  Pines.ApiOma.Core.Persona.Pais:
+    type: object
+    properties:
+      codigo:
+        type: string
+      descripcion:
+        type: string
+  Pines.ApiOma.Core.Persona.Telefono:
+    type: object
+    properties:
+      codigoArea:
+        type: string
+      nro:
+        type: string
+  Pines.ApiOma.Core.Persona.ResponseConsultaPersona:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      persona:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.DatosPersona'
+  Pines.ApiOma.Core.Persona.DatosPersona:
+    type: object
+    properties:
+      domicilio:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.ModDomicilio'
+      estadoCivil:
+        type: string
+      conyuge:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Conyuge'
+      empleo:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Empleo'
+      categoriaIva:
+        type: string
+      mail:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Mail'
+      declaracionJurada:
+        type: string
+      pep:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Pep'
+      modalidadTrabajo:
+        type: string
+  Pines.ApiOma.Core.Persona.ModDomicilio:
+    type: object
+    properties:
+      calle:
+        type: string
+      nro:
+        type: string
+      piso:
+        type: string
+      departamento:
+        type: string
+      localidad:
+        type: string
+      codigoPostal:
+        type: string
+      pais:
+        type: string
+      provincia:
+        type: string
+      telefonoParticular:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Telefono'
+      celular:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Telefono'
+      telefonoLaboral:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Telefono'
+      telefonoLaboral2:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Telefono'
+  Pines.ApiOma.Core.Persona.Conyuge:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      apellido:
+        type: string
+      nombre:
+        type: string
+      telefono:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Telefono'
+  Pines.ApiOma.Core.Persona.Empleo:
+    type: object
+    properties:
+      ocupacion:
+        type: string
+      ingresos:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.Ingreso'
+  Pines.ApiOma.Core.Persona.Mail:
+    type: object
+    properties:
+      mail:
+        type: string
+      mailLaboral:
+        type: string
+  Pines.ApiOma.Core.Persona.Pep:
+    type: object
+    properties:
+      fecha:
+        type: string
+      pep:
+        type: string
+  Pines.ApiOma.Core.Persona.Ingreso:
+    type: object
+    properties:
+      periodo:
+        type: string
+      sueldo:
+        format: double
+        type: number
+      otrosIngresos:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Persona.RequestModPersona:
+    type: object
+    properties:
+      otp:
+        type: string
+      user:
+        type: string
+      domain:
+        type: string
+      persona:
+        $ref: '#/definitions/Pines.ApiOma.Core.Persona.DatosPersona'
+  Pines.ApiOma.Core.PlazoFijo.RequestCalculoInteres:
+    type: object
+    properties:
+      moneda:
+        type: string
+      plazo:
+        format: int32
+        type: integer
+      monto:
+        format: double
+        type: number
+  Pines.ApiOma.Core.PlazoFijo.ResponseCalculoInteres:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      tasa:
+        format: double
+        type: number
+      plazo:
+        format: int32
+        type: integer
+      interes:
+        format: double
+        type: number
+      token:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.RequestPlazoFijo:
+    type: object
+    properties:
+      otp:
+        type: string
+      user:
+        type: string
+      domain:
+        type: string
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      especie:
+        type: string
+      moneda:
+        type: string
+      acreditaAutom:
+        type: string
+      renueva:
+        type: string
+      token:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.ResponsePlazoFijo:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      numeroTransaccion:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.RequestModificacionPlazoFijo:
+    type: object
+    properties:
+      nroMinuta:
+        format: int32
+        type: integer
+      empresa:
+        type: string
+      acreditaAtomaticamente:
+        type: string
+      renuevaCapital:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.ResponseModificarPlazoFijo:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+  Pines.ApiOma.Core.PlazoFijo.RequestConsultaPlazoFijo:
+    type: object
+    properties:
+      tipoDoc:
+        type: string
+      nroDoc:
+        type: string
+      activos:
+        type: string
+      fechaDesde:
+        type: string
+      fechaHasta:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      identificacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Identificacion'
+      operacion:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Operacion'
+  Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Identificacion:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Operacion:
+    type: object
+    properties:
+      operacion:
+        $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_DatosOperacion'
+      moneda:
+        type: string
+      especie:
+        $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_CodigoDescripcion'
+      capital:
+        format: double
+        type: number
+      plazo:
+        format: int32
+        type: integer
+      tasa:
+        format: double
+        type: number
+      importeTotal:
+        format: double
+        type: number
+      fechaContabilizacion:
+        type: string
+      fechaVencimiento:
+        type: string
+      interes:
+        $ref: '#/definitions/Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Interes'
+      acredita:
+        type: string
+      renueva:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_DatosOperacion:
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      empresa:
+        type: string
+      codigo:
+        type: string
+      descripcion:
+        type: string
+      nroComprobante:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_CodigoDescripcion:
+    type: object
+    properties:
+      codigo:
+        type: string
+      descripcion:
+        type: string
+  Pines.ApiOma.Core.PlazoFijo.ResponseConsultaPlazoFijo_Interes:
+    type: object
+    properties:
+      interesTotal:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Prestamos.RequestConsultaPrestamo:
+    type: object
+    properties:
+      tipoDocumento:
+        type: string
+      nroDocumento:
+        type: string
+      activos:
+        type: string
+      fechaDesde:
+        type: string
+      fechaHasta:
+        type: string
+  Pines.ApiOma.Core.Prestamos.ResponseConsultaPrestamo:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      datosPrestamos:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.DatosPrestamo'
+  Pines.ApiOma.Core.Prestamos.DatosPrestamo:
+    type: object
+    properties:
+      codCliente:
+        type: string
+      nombreCliente:
+        type: string
+      nroOperacion:
+        format: int32
+        type: integer
+      nroPrestamo:
+        type: string
+      empresa:
+        type: string
+      codigoOperacion:
+        type: string
+      descripcion:
+        type: string
+      moneda:
+        type: string
+      especie:
+        type: string
+      capitalTotal:
+        format: double
+        type: number
+      tasa:
+        format: double
+        type: number
+      plazo:
+        format: int32
+        type: integer
+      fechaContable:
+        type: string
+      fechaVencimiento:
+        type: string
+      importeTotal:
+        format: double
+        type: number
+      importeRestante:
+        format: double
+        type: number
+      totalRetenciones:
+        format: double
+        type: number
+      cuotasRestante:
+        type: string
+      cuotas:
+        type: string
+      estado:
+        type: string
+      interes:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Prestamos.RequestConsultaCuota:
+    type: object
+    properties:
+      codEmpresa:
+        type: string
+      nroPrestamo:
+        type: string
+      nroCuota:
+        type: string
+      estado:
+        type: string
+  Pines.ApiOma.Core.Prestamos.ResponseConsultaCuota:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      datosCuotas:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.DatosCuota'
+  Pines.ApiOma.Core.Prestamos.DatosCuota:
+    type: object
+    properties:
+      nroOperacion:
+        format: int32
+        type: integer
+      cuota:
+        type: string
+      capital:
+        format: double
+        type: number
+      interes:
+        format: double
+        type: number
+      montoTotal:
+        format: double
+        type: number
+      fechaVencimiento:
+        type: string
+      estadoCuota:
+        type: string
+      iva:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Prestamos.RequestPrestamo:
+    type: object
+    properties:
+      otp:
+        type: string
+      user:
+        type: string
+      domain:
+        type: string
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      especie:
+        type: string
+      moneda:
+        type: string
+      capital:
+        format: double
+        type: number
+      tasa:
+        format: double
+        type: number
+      cantidadCuotas:
+        format: int32
+        type: integer
+      tipoPrestamo:
+        type: string
+      score:
+        format: double
+        type: number
+      aprobado:
+        type: string
+      clasificacionIngreso:
+        type: string
+      destinoFondos:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.DestinoFondo'
+      aplicacionGeografica:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.AplicacionGeografica'
+  Pines.ApiOma.Core.Prestamos.DestinoFondo:
+    type: object
+    properties:
+      codigo:
+        type: string
+      importe:
+        format: double
+        type: number
+  Pines.ApiOma.Core.Prestamos.AplicacionGeografica:
+    type: object
+    properties:
+      codigo:
+        type: string
+      importe:
+        format: double
+        type: number
+      codPostal:
+        type: string
+  Pines.ApiOma.Core.Prestamos.ResponsePrestamo:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      numeroTransaccion:
+        type: string
+  Pines.ApiOma.Core.Prestamos.RequestSimulador:
+    type: object
+    properties:
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      especie:
+        type: string
+      moneda:
+        type: string
+      capital:
+        format: double
+        type: number
+      tasa:
+        format: double
+        type: number
+      cantidadCuotas:
+        format: int32
+        type: integer
+      tipoPrestamo:
+        type: string
+  Pines.ApiOma.Core.Prestamos.ResponseSimulador:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      detalleCuotas:
+        type: array
+        items:
+          $ref: '#/definitions/Pines.ApiOma.Core.Prestamos.DatosCuota'
+  Pines.ApiOma.Core.Tranferencias.RequestTransaccion:
+    type: object
+    properties:
+      otp:
+        type: string
+      user:
+        type: string
+      domain:
+        type: string
+      tipoCuenta:
+        type: string
+      nroCuenta:
+        type: string
+      moneda:
+        type: string
+      especie:
+        type: string
+      fechaTransferencias:
+        type: string
+      transferenciaDiferida:
+        type: string
+      cbuDestino:
+        type: string
+      codigoMotivo:
+        type: string
+      montoTransferencia:
+        format: double
+        type: number
+      enviaMail:
+        type: string
+      textoEmail:
+        type: string
+  Pines.ApiOma.Core.Tranferencias.ResponseTransaccion:
+    type: object
+    properties:
+      respuesta:
+        $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
+      numeroTransaccion:
+        type: string
