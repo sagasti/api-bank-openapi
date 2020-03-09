@@ -2,10 +2,9 @@ swagger: '2.0'
 info:
   version: v1
   title: Pines.ApiOma
-host: 'api.totalneo.com:4010'
+host: 'api-bank.totalneo.com:4010'
 schemes:
   - http
-  - https
 paths:
   /api/ConsultaAgenda:
     post:
