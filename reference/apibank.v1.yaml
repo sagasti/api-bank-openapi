@@ -2844,4 +2844,7 @@ definitions:
         $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
       numeroTransaccion:
         type: string
-basePath: /sandbox
+produces:
+  - application/json
+consumes:
+  - application/json
