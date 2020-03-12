@@ -6,7 +6,6 @@ info:
 host: 'api-bank.totalneo.com:4010'
 schemes:
   - http
-  - https
 paths:
   /api/ConsultaAgenda:
     post:
@@ -2844,7 +2843,7 @@ definitions:
         $ref: '#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta'
       numeroTransaccion:
         type: string
-produces:
-  - application/json
 consumes:
+  - application/json
+produces:
   - application/json
