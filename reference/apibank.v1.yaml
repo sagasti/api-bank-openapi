@@ -30,7 +30,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseAgenda'
-      description: Consultar Agenda.
+      description: Consultar Agenda
+      summary: ConsultaAgenda
   /api/AltaBeneficiario:
     post:
       tags:
