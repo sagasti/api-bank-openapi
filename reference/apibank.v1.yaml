@@ -621,6 +621,7 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.ResponseOnBoarding'
+      description: Alta de cliente (OnBoarding)
   /api/ConsultaOperacion:
     post:
       tags:
@@ -888,6 +889,7 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Persona.ResponseConsultaPersona'
+      description: Consulta de datos modificables de persona
   /api/ModificarPersona:
     post:
       tags:
