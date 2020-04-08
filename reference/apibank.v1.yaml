@@ -2,7 +2,14 @@ swagger: '2.0'
 info:
   version: v1
   title: Pines.ApiOma
-  description: ''
+  description: |-
+    Cuando se consuman los servicios expuestos a través de la API, el header del request deberá contener dos atributos de seguridad.
+    El primer atributo corresponderá al token de aplicación. Por ejemplo, “Authorization: Bearer < Token >”. (Ver documento Catalogo de API Sitio a Sitio)
+    El segundo atributo corresponderá al token de sesión de usuarios. Por ejemplo, “UserAuthorization”: “<< token >>”. Este token de sesión de usuario se obtendrá como respuesta con éxito a la llamada a la API de Login. Vale notar que para acceder a la API de Login no será necesario incluir el token de sesión de usuario, pero sí será necesario incluir el token de aplicación.
+    El token de sesión de usuario tendrá un tiempo de vida de acuerdo a las normativas vigentes, siendo este parametrizable. Superado este tiempo de vida, el token se vuelve caduco y pierde validez para el sistema.
+    Para mantener una sesión de usuario activa más allá del tiempo de vida del token de sesión de usuario, se deberá solicitar llamar a la API de refresh token antes de que caduque el tiempo del token. Esta API responderá (en el body del response) con un nuevo token de sesión de usuario. Si al momento de solicitar el refresh token, el token de sesión de usuario haya caducado, se deberá solicitara un nuevo inicio de sesión de usuario (API de Login) para poder continuar consumiendo los servicios de API.
+
+    Especificaciones Generales: Los datos del request de las API Rest que en la columna R/O se identifican con R: son datos requeridos, los que se identifican con O: son datos optativos.
 host: 'api-bank.totalneo.com:4010'
 schemes:
   - http
@@ -400,6 +407,10 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseSaldo'
+      summary: Consulta de Saldos de Cuentas (Tipo de documento y Numero de documento)
+      description: |-
+        Requiere que viaje en el header el atributo de sesión de usuario
+        “UserAuthorization”.
   /api/ConsultaCuenta:
     post:
       tags:
@@ -423,6 +434,10 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCuenta'
+      summary: Consulta de cuentas (Tipo de documento y Numero de documento)
+      description: |-
+        Requiere que viaje en el header el atributo de sesión de usuario
+        “UserAuthorization”.
   /api/ConsultaCuentaPorCuenta:
     post:
       tags:
@@ -446,6 +461,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseCuentaPorCuenta'
+      summary: Consulta de Datos de Cuenta (Tipo de Cuenta y Numero de Cuenta)
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
   /api/ConsultaSaldoPorCuenta:
     post:
       tags:
@@ -469,6 +486,10 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseSaldoPorCuenta'
+      description: |-
+        Requiere que viaje en el header el atributo de sesión de usuario
+        “UserAuthorization”.
+      summary: Consulta de Saldo de Cuenta (Tipo de Cuenta y Numero de Cuenta)
   /api/ConsultaMovimientosDiferidos:
     post:
       tags:
@@ -492,6 +513,10 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseMovimientoDiferido'
+      summary: 'Consulta de Movimientos Diferidos (Tipo de Cuenta, Numero de Cuenta, Especie y Moneda)'
+      description: |-
+        Requiere que viaje en el header el atributo de sesión de usuario
+        “UserAuthorization”.
   /api/ConsultaMovimientos:
     post:
       tags:
@@ -515,6 +540,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Cuenta.ResponseMovimiento'
+      summary: 'Consulta de Movimientos (Tipo de Cuenta, Numero de Cuenta, Especie y Moneda)'
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
   /api/ModificarAlias:
     post:
       tags:
@@ -622,6 +649,7 @@ paths:
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.OnBoarding.ResponseOnBoarding'
       description: Alta de cliente (OnBoarding)
+      summary: Alta de cliente (OnBoarding)
   /api/ConsultaOperacion:
     post:
       tags:
