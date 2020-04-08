@@ -62,6 +62,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseAltaBeneficiario'
+      summary: Alta de Beneficiario
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
   /api/ModificarBeneficiario:
     post:
       tags:
@@ -85,6 +87,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseModBeneficiario'
+      summary: Modificación de Beneficiario
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
   /api/EliminarBeneficiario:
     post:
       tags:
@@ -108,6 +112,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Pines.ApiOma.Core.Agenda.ResponseModBeneficiario'
+      summary: Baja de Beneficiario
+      description: Requiere que viaje en el header el atributo de sesión de usuario “UserAuthorization”.
   /api/GetUsuario:
     post:
       tags:
