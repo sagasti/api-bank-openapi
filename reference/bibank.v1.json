@@ -4,7 +4,7 @@
     "version": "v1",
     "title": "Pines.ApiOma"
   },
-  "host": "bibank-sandbox.getsandbox.com",
+  "host": "api-bank.totalneo.com:4010",
   "schemes": [
     "http",
     "https"
