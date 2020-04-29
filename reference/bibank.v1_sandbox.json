@@ -4,8 +4,7 @@
     "version": "v1",
     "title": "Pines.ApiOma"
   },
-  "host": "homoapiomamw.bancointerfinanzas.com.ar",
-  "basePath": "/pines.apioma",
+  "host": "bibank.getsandbox.com",
   "schemes": [
     "http",
     "https"
@@ -1017,7 +1016,7 @@
         "tags": [
           "NotFound"
         ],
-        "operationId": "NotFound_ErrorNotFound",
+        "operationId": "GET_NotFound_ErrorNotFound",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1044,7 +1043,7 @@
         "tags": [
           "NotFound"
         ],
-        "operationId": "NotFound_ErrorNotFound",
+        "operationId": "PUT_NotFound_ErrorNotFound",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1071,7 +1070,7 @@
         "tags": [
           "NotFound"
         ],
-        "operationId": "NotFound_ErrorNotFound",
+        "operationId": "POST_NotFound_ErrorNotFound",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1098,7 +1097,7 @@
         "tags": [
           "NotFound"
         ],
-        "operationId": "NotFound_ErrorNotFound",
+        "operationId": "DELETE_NotFound_ErrorNotFound",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1125,7 +1124,7 @@
         "tags": [
           "NotFound"
         ],
-        "operationId": "NotFound_ErrorNotFound",
+        "operationId": "OPTIONS_NotFound_ErrorNotFound",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1152,7 +1151,7 @@
         "tags": [
           "NotFound"
         ],
-        "operationId": "NotFound_ErrorNotFound",
+        "operationId": "HEAD_NotFound_ErrorNotFound",
         "consumes": [],
         "produces": [
           "application/json",
