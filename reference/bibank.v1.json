@@ -1446,19 +1446,19 @@
           {
             "name": "tipoDocumento",
             "in": "query",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "name": "nroDocumento",
             "in": "query",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "name": "userId",
             "in": "query",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
