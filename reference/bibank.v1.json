@@ -4,7 +4,7 @@
     "version": "v1",
     "title": "Pines.ApiOma"
   },
-  "host": "bibank.getsandbox.com",
+  "host": "bibank-sandbox.getsandbox.com",
   "schemes": [
     "http",
     "https"
@@ -1011,197 +1011,6 @@
         }
       }
     },
-    "/api/{url}": {
-      "get": {
-        "tags": [
-          "NotFound"
-        ],
-        "operationId": "GET_NotFound_ErrorNotFound",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "NotFound"
-        ],
-        "operationId": "PUT_NotFound_ErrorNotFound",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "NotFound"
-        ],
-        "operationId": "POST_NotFound_ErrorNotFound",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "NotFound"
-        ],
-        "operationId": "DELETE_NotFound_ErrorNotFound",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "options": {
-        "tags": [
-          "NotFound"
-        ],
-        "operationId": "OPTIONS_NotFound_ErrorNotFound",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "head": {
-        "tags": [
-          "NotFound"
-        ],
-        "operationId": "HEAD_NotFound_ErrorNotFound",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "NotFound"
-        ],
-        "operationId": "NotFound_ErrorNotFound",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
-      }
-    },
     "/api/OnBoarding": {
       "post": {
         "tags": [
@@ -1633,6 +1442,26 @@
           "application/json",
           "text/json"
         ],
+        "parameters": [
+          {
+            "name": "tipoDocumento",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "nroDocumento",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -2013,6 +1842,9 @@
         },
         "idTransaccion": {
           "type": "string"
+        },
+        "efectivo": {
+          "type": "boolean"
         }
       }
     },
@@ -2092,6 +1924,9 @@
         },
         "nroDocumento": {
           "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -2147,12 +1982,6 @@
         "domain": {
           "type": "string"
         },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
         "cbuBeneficiario": {
           "type": "string"
         },
@@ -2166,6 +1995,15 @@
           "type": "string"
         },
         "id_multilenguaje": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -2181,12 +2019,6 @@
     "Pines.ApiOma.Core.Agenda.RequestModBeneficiario": {
       "type": "object",
       "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
         "cbuBeneficiario": {
           "type": "string"
         },
@@ -2194,6 +2026,15 @@
           "type": "string"
         },
         "mailBeneficiario": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -2209,13 +2050,16 @@
     "Pines.ApiOma.Core.Agenda.RequestBajaBeneficiario": {
       "type": "object",
       "properties": {
+        "cbuBeneficiario": {
+          "type": "string"
+        },
         "tipoDocumento": {
           "type": "string"
         },
         "nroDocumento": {
           "type": "string"
         },
-        "cbuBeneficiario": {
+        "userId": {
           "type": "string"
         }
       }
@@ -2421,6 +2265,15 @@
         },
         "tknPrecio": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -2438,13 +2291,16 @@
     "Pines.ApiOma.Core.Cuenta.RequestSaldo": {
       "type": "object",
       "properties": {
+        "fecha": {
+          "type": "string"
+        },
         "tipoDocumento": {
           "type": "string"
         },
         "nroDocumento": {
           "type": "string"
         },
-        "fecha": {
+        "userId": {
           "type": "string"
         }
       }
@@ -2566,6 +2422,9 @@
         },
         "nroDocumento": {
           "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -2616,6 +2475,15 @@
           "type": "string"
         },
         "nroCuenta": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -2673,6 +2541,15 @@
           "type": "string"
         },
         "fecha": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -2748,6 +2625,15 @@
           "type": "string"
         },
         "fechaHasta": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -2833,6 +2719,15 @@
         },
         "fechaHasta": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -2864,6 +2759,15 @@
         },
         "alias": {
           "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.AliasM"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -2915,6 +2819,15 @@
           "type": "string"
         },
         "alias": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -2969,6 +2882,15 @@
       "properties": {
         "cbu": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -2987,6 +2909,15 @@
           "type": "string"
         },
         "nroCuenta": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -3315,6 +3246,9 @@
         },
         "nroDocumento": {
           "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -3456,6 +3390,15 @@
         },
         "especie": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -3530,6 +3473,15 @@
         },
         "tipoCotizacion": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -3583,6 +3535,15 @@
       "type": "object",
       "properties": {
         "producto": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -3773,6 +3734,9 @@
           "type": "string"
         },
         "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -4081,6 +4045,15 @@
         },
         "persona": {
           "$ref": "#/definitions/Pines.ApiOma.Core.Persona.DatosPersona"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -4097,6 +4070,15 @@
         "monto": {
           "format": "double",
           "type": "number"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -4155,6 +4137,15 @@
         },
         "token": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -4184,6 +4175,15 @@
         },
         "renuevaCapital": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -4211,6 +4211,15 @@
           "type": "string"
         },
         "fechaHasta": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -4332,12 +4341,6 @@
     "Pines.ApiOma.Core.Prestamos.RequestConsultaPrestamo": {
       "type": "object",
       "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
         "activos": {
           "type": "string"
         },
@@ -4345,6 +4348,15 @@
           "type": "string"
         },
         "fechaHasta": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -4452,6 +4464,15 @@
           "type": "string"
         },
         "estado": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
@@ -4564,6 +4585,15 @@
           "items": {
             "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.AplicacionGeografica"
           }
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -4634,6 +4664,15 @@
         },
         "tipoPrestamo": {
           "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
         }
       }
     },
@@ -4695,6 +4734,15 @@
           "type": "string"
         },
         "textoEmail": {
+          "type": "string"
+        },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
+        "userId": {
           "type": "string"
         }
       }
