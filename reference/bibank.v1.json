@@ -4,9 +4,10 @@
     "version": "v1",
     "title": "Pines.ApiOma"
   },
-  "host": "api-bank.totalneo.com:4010",
+  "host": "localhost:4010",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/api/Operaciones": {
