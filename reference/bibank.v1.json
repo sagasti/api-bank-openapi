@@ -6,8 +6,7 @@
   },
   "host": "api-bank.totalneo.com:4010",
   "schemes": [
-    "http",
-    "https"
+    "http"
   ],
   "paths": {
     "/api/Operaciones": {
