@@ -4521,5 +4521,5 @@
     }
   },
   "securityDefinitions": {},
-  "basePath": "/api/"
+  "basePath": "/api/api/"
 }
