@@ -4521,5 +4521,5 @@
     }
   },
   "securityDefinitions": {},
-  "basePath": "/pines.apioma"
+  "basePath": "/pines.apioma/"
 }
