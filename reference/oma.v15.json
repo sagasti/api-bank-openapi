@@ -2,9 +2,11 @@
   "swagger": "2.0",
   "info": {
     "version": "v1",
-    "title": "Pines.ApiOma"
+    "title": "Pines.ApiOma",
+    "description": "Cuando se consuman los servicios expuestos a través de la API, el header del request deberá contener dos atributos de seguridad.\nEl primer atributo corresponderá al token de aplicación. Por ejemplo, “Authorization: Bearer < Token >”. (Ver documento Catalogo de API Sitio a Sitio)\nEl segundo atributo corresponderá al token de sesión de usuarios. Por ejemplo, “UserAuthorization”: “<< token >>”. Este token de sesión de usuario se obtendrá como respuesta con éxito a la llamada a la API de Login. Vale notar que para acceder a la API de Login no será necesario incluir el token de sesión de usuario, pero sí será necesario incluir el token de aplicación.\nEl token de sesión de usuario tendrá un tiempo de vida de acuerdo a las normativas vigentes, siendo este parametrizable. Superado este tiempo de vida, el token se vuelve caduco y pierde validez para el sistema.\nPara mantener una sesión de usuario activa más allá del tiempo de vida del token de sesión de usuario, se deberá solicitar llamar a la API de refresh token antes de que caduque el tiempo del token. Esta API responderá (en el body del response) con un nuevo token de sesión de usuario. Si al momento de solicitar el refresh token, el token de sesión de usuario haya caducado, se deberá solicitara un nuevo inicio de sesión de usuario (API de Login) para poder continuar consumiendo los servicios de API.\n\nEspecificaciones Generales: Los datos del request de las API Rest que en la columna R/O se identifican con R: son datos requeridos, los que se identifican con O: son datos optativos."
   },
-  "host": "localhost:4010",
+  "host": "homoapiomamw.bancointerfinanzas.com.ar",
+  "basePath": "/pines.apioma/api/",
   "schemes": [
     "http",
     "https"
@@ -1442,26 +1444,6 @@
           "application/json",
           "text/json"
         ],
-        "parameters": [
-          {
-            "name": "tipoDocumento",
-            "in": "query",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "nroDocumento",
-            "in": "query",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "userId",
-            "in": "query",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -1842,9 +1824,6 @@
         },
         "idTransaccion": {
           "type": "string"
-        },
-        "efectivo": {
-          "type": "boolean"
         }
       }
     },
@@ -1924,9 +1903,6 @@
         },
         "nroDocumento": {
           "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -1982,6 +1958,12 @@
         "domain": {
           "type": "string"
         },
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
         "cbuBeneficiario": {
           "type": "string"
         },
@@ -1995,15 +1977,6 @@
           "type": "string"
         },
         "id_multilenguaje": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -2019,6 +1992,12 @@
     "Pines.ApiOma.Core.Agenda.RequestModBeneficiario": {
       "type": "object",
       "properties": {
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
         "cbuBeneficiario": {
           "type": "string"
         },
@@ -2026,15 +2005,6 @@
           "type": "string"
         },
         "mailBeneficiario": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -2050,16 +2020,13 @@
     "Pines.ApiOma.Core.Agenda.RequestBajaBeneficiario": {
       "type": "object",
       "properties": {
-        "cbuBeneficiario": {
-          "type": "string"
-        },
         "tipoDocumento": {
           "type": "string"
         },
         "nroDocumento": {
           "type": "string"
         },
-        "userId": {
+        "cbuBeneficiario": {
           "type": "string"
         }
       }
@@ -2265,15 +2232,6 @@
         },
         "tknPrecio": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -2291,16 +2249,13 @@
     "Pines.ApiOma.Core.Cuenta.RequestSaldo": {
       "type": "object",
       "properties": {
-        "fecha": {
-          "type": "string"
-        },
         "tipoDocumento": {
           "type": "string"
         },
         "nroDocumento": {
           "type": "string"
         },
-        "userId": {
+        "fecha": {
           "type": "string"
         }
       }
@@ -2422,9 +2377,6 @@
         },
         "nroDocumento": {
           "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -2475,15 +2427,6 @@
           "type": "string"
         },
         "nroCuenta": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -2541,15 +2484,6 @@
           "type": "string"
         },
         "fecha": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -2625,15 +2559,6 @@
           "type": "string"
         },
         "fechaHasta": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -2719,15 +2644,6 @@
         },
         "fechaHasta": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -2759,15 +2675,6 @@
         },
         "alias": {
           "$ref": "#/definitions/Pines.ApiOma.Core.Cuenta.AliasM"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -2819,15 +2726,6 @@
           "type": "string"
         },
         "alias": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -2882,15 +2780,6 @@
       "properties": {
         "cbu": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -2909,15 +2798,6 @@
           "type": "string"
         },
         "nroCuenta": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -3246,9 +3126,6 @@
         },
         "nroDocumento": {
           "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -3390,15 +3267,6 @@
         },
         "especie": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -3473,15 +3341,6 @@
         },
         "tipoCotizacion": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -3535,15 +3394,6 @@
       "type": "object",
       "properties": {
         "producto": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -3734,9 +3584,6 @@
           "type": "string"
         },
         "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -4045,15 +3892,6 @@
         },
         "persona": {
           "$ref": "#/definitions/Pines.ApiOma.Core.Persona.DatosPersona"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -4070,15 +3908,6 @@
         "monto": {
           "format": "double",
           "type": "number"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -4137,15 +3966,6 @@
         },
         "token": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -4175,15 +3995,6 @@
         },
         "renuevaCapital": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -4211,15 +4022,6 @@
           "type": "string"
         },
         "fechaHasta": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -4341,6 +4143,12 @@
     "Pines.ApiOma.Core.Prestamos.RequestConsultaPrestamo": {
       "type": "object",
       "properties": {
+        "tipoDocumento": {
+          "type": "string"
+        },
+        "nroDocumento": {
+          "type": "string"
+        },
         "activos": {
           "type": "string"
         },
@@ -4348,15 +4156,6 @@
           "type": "string"
         },
         "fechaHasta": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -4464,15 +4263,6 @@
           "type": "string"
         },
         "estado": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
@@ -4585,15 +4375,6 @@
           "items": {
             "$ref": "#/definitions/Pines.ApiOma.Core.Prestamos.AplicacionGeografica"
           }
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -4664,15 +4445,6 @@
         },
         "tipoPrestamo": {
           "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
-          "type": "string"
         }
       }
     },
@@ -4734,15 +4506,6 @@
           "type": "string"
         },
         "textoEmail": {
-          "type": "string"
-        },
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "userId": {
           "type": "string"
         }
       }
