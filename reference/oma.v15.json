@@ -7,7 +7,7 @@
   },
   "host": "apibank.openpass.com.ar:4010",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api/Operaciones": {
