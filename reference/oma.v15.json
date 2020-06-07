@@ -5,7 +5,7 @@
     "title": "Pines.ApiOma",
     "description": "Cuando se consuman los servicios expuestos a través de la API, el header del request deberá contener dos atributos de seguridad.\nEl primer atributo corresponderá al token de aplicación. Por ejemplo, “Authorization: Bearer < Token >”. (Ver documento Catalogo de API Sitio a Sitio)\nEl segundo atributo corresponderá al token de sesión de usuarios. Por ejemplo, “UserAuthorization”: “<< token >>”. Este token de sesión de usuario se obtendrá como respuesta con éxito a la llamada a la API de Login. Vale notar que para acceder a la API de Login no será necesario incluir el token de sesión de usuario, pero sí será necesario incluir el token de aplicación.\nEl token de sesión de usuario tendrá un tiempo de vida de acuerdo a las normativas vigentes, siendo este parametrizable. Superado este tiempo de vida, el token se vuelve caduco y pierde validez para el sistema.\nPara mantener una sesión de usuario activa más allá del tiempo de vida del token de sesión de usuario, se deberá solicitar llamar a la API de refresh token antes de que caduque el tiempo del token. Esta API responderá (en el body del response) con un nuevo token de sesión de usuario. Si al momento de solicitar el refresh token, el token de sesión de usuario haya caducado, se deberá solicitara un nuevo inicio de sesión de usuario (API de Login) para poder continuar consumiendo los servicios de API.\n\nEspecificaciones Generales: Los datos del request de las API Rest que en la columna R/O se identifican con R: son datos requeridos, los que se identifican con O: son datos optativos."
   },
-  "host": "127:0.0.1:4010",
+  "host": "apibank.openpass.com.ar:4010",
   "schemes": [
     "http"
   ],
