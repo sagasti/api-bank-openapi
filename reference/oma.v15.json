@@ -1734,44 +1734,6 @@
     }
   },
   "definitions": {
-    "Pines.ApiOma.Core.AFIP.RequestOperaciones": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "monto": {
-          "format": "double",
-          "type": "number"
-        },
-        "paisDocumento": {
-          "type": "string"
-        },
-        "idTransaccion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.AFIP.ResponseOperaciones": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "puedeComprar": {
-          "type": "boolean"
-        },
-        "idOperacion": {
-          "type": "string"
-        },
-        "idTransaccion": {
-          "type": "string"
-        }
-      }
-    },
     "Pines.ApiOma.Core.ControllerBase.Respuesta": {
       "type": "object",
       "properties": {
@@ -1780,46 +1742,6 @@
         },
         "mensaje": {
           "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.AFIP.RequestAnulaciones": {
-      "type": "object",
-      "properties": {
-        "tipoDocumento": {
-          "type": "string"
-        },
-        "nroDocumento": {
-          "type": "string"
-        },
-        "paisDocumento": {
-          "type": "string"
-        },
-        "idOperacion": {
-          "type": "string"
-        },
-        "fechaOperacion": {
-          "type": "string"
-        },
-        "idTransaccion": {
-          "type": "string"
-        }
-      }
-    },
-    "Pines.ApiOma.Core.AFIP.ResponseAnulaciones": {
-      "type": "object",
-      "properties": {
-        "respuesta": {
-          "$ref": "#/definitions/Pines.ApiOma.Core.ControllerBase.Respuesta"
-        },
-        "idAnulacion": {
-          "type": "string"
-        },
-        "idTransaccion": {
-          "type": "string"
-        },
-        "procesado": {
-          "type": "boolean"
         }
       }
     },
