@@ -10,41 +10,6 @@
     "https"
   ],
   "paths": {
-    "/api/Anulaciones": {
-      "post": {
-        "tags": [
-          "AFIP"
-        ],
-        "operationId": "AFIP_Post_Anulaciones",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.AFIP.RequestAnulaciones"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Pines.ApiOma.Core.AFIP.ResponseAnulaciones"
-            }
-          }
-        }
-      }
-    },
     "/api/ConsultaAgenda": {
       "post": {
         "tags": [
